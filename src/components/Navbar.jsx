@@ -8,7 +8,6 @@ function Navbar() {
     <nav className="fixed w-full z-10">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          {/* Left side - Navigation Links */}
           <div className="hidden md:flex space-x-16 font-manrope font-semibold text-brown flex-1">
             <NavLink to="/about" className="relative group flex items-center">
               <span className="absolute left-0 w-1.5 h-1.5 rounded-full bg-brown transform scale-0 group-hover:scale-100 transition-transform duration-200 -translate-x-4"></span>
@@ -24,12 +23,12 @@ function Navbar() {
             </NavLink>
           </div>
 
-          {/* Center - Logo */}
+
           <NavLink to="/" className="text-2xl font-mounties font-bold text-brown flex-shrink-0 md:absolute md:left-1/2 md:-translate-x-1/2">
             SquareFoot.studio
           </NavLink>
 
-          {/* Right side - Contact Button */}
+
           <div className="hidden md:block flex-1 text-right">
             <NavLink
               to="/"
@@ -39,7 +38,7 @@ function Navbar() {
             </NavLink>
           </div>
 
-          {/* Mobile menu button */}
+
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -71,7 +70,7 @@ function Navbar() {
           </div>
         </div>
 
-        {/* Mobile menu */}
+
         {isOpen && (
           <div className="md:hidden fixed inset-0 bg-beige z-50">
             <div className="flex items-center h-16 px-4">
