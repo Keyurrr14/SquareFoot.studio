@@ -4,7 +4,16 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        mounties: ['MountiesRegular'],
+        manrope: ['Manrope'],
+      },
+      colors: {
+        'beige': '#F3F2EB',
+        'brown': '#83735B',
+      },
+    },
   },
   plugins: [],
 }
