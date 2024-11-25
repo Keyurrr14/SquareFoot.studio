@@ -4,6 +4,7 @@ import HomeImage1 from "../assets/images/HomeImage1.webp";
 import HomeImage2 from "../assets/images/HomeImage2.webp";
 import HomeImage3 from "../assets/images/HomeImage3.webp";
 import HomeImage4 from "../assets/images/HomeImage4.webp";
+import Footer from "../components/Footer";
 import ProjectSection from "../components/ProjectSection";
 
 export default function Home() {
@@ -116,6 +117,7 @@ export default function Home() {
           order={[1, 3, 2]}
         />
       </div>
+      <Footer />
     </>
   );
 }
