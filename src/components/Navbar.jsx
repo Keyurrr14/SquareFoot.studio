@@ -5,7 +5,7 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed w-full z-10">
+    <nav className="sticky top-0 w-full z-10 bg-beige">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <div className="hidden md:flex space-x-16 font-manrope font-semibold text-brown flex-1">
