@@ -36,7 +36,21 @@ export default function Footer() {
             Designed by Keyur Rathod
             <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-beige transition-all duration-300 group-hover:w-full"></span>
           </h1>
-          <h1 className="font-marbley text-beige text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl tracking-tighter cursor-pointer relative group">
+          <h1 
+            className="font-marbley text-beige text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl tracking-tighter cursor-pointer relative group"
+            onClick={() => {
+              const scrollToTop = () => {
+                const currentPosition = window.scrollY;
+                if (currentPosition > 0) {
+                  window.requestAnimationFrame(() => {
+                    window.scrollTo(0, currentPosition - currentPosition/35);
+                    scrollToTop();
+                  });
+                }
+              };
+              scrollToTop();
+            }}
+          >
             Back to Top
             <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-beige transition-all duration-300 group-hover:w-full"></span>
           </h1>
