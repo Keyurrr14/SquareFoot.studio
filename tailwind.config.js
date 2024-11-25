@@ -8,10 +8,12 @@ module.exports = {
       fontFamily: {
         mounties: ['MountiesRegular'],
         manrope: ['Manrope'],
+        marbley: ['MarbleyRegular'],
       },
       colors: {
         'beige': '#F3F2EB',
         'brown': '#83735B',
+        'light-brown' : '#A9977D'
       },
     },
   },
