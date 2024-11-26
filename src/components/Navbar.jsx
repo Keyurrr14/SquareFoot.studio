@@ -38,7 +38,7 @@ function Navbar() {
 
           <div className="hidden md:block flex-1 text-right">
             <NavLink
-              to="/"
+              to="/contact"
               className="inline-flex items-center px-3 py-1.5 font-manrope text-brown border-2 border-brown rounded-full hover:bg-brown hover:text-white transition-colors duration-200"
             >
               Contact

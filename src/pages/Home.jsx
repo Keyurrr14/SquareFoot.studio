@@ -4,7 +4,6 @@ import HomeImage1 from "../assets/images/HomeImage1.webp";
 import HomeImage2 from "../assets/images/HomeImage2.webp";
 import HomeImage3 from "../assets/images/HomeImage3.webp";
 import HomeImage4 from "../assets/images/HomeImage4.webp";
-import Footer from "../components/Footer";
 import ProjectSection from "../components/ProjectSection";
 
 export default function Home() {
@@ -34,7 +33,7 @@ export default function Home() {
               transformOrigin: "center center",
             }}
           />
-          <div className="absolute inset-0 bg-black opacity-65" />
+          <div className="absolute inset-0 bg-black opacity-70" />
           <h1 className="font-mounties text-light-brown relative z-10 text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-center px-4">
             SquareFoot.studio
           </h1>
@@ -117,7 +116,6 @@ export default function Home() {
           order={[1, 3, 2]}
         />
       </div>
-      <Footer />
     </>
   );
 }

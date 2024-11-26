@@ -2,6 +2,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import { useSmoothScroll } from "../context/SmoothScrollContext";
+import Footer from "../components/Footer";
 
 function RootLayout() {
   const location = useLocation();
@@ -19,6 +20,7 @@ function RootLayout() {
       <main data-scroll-container>
         <Outlet />
       </main>
+      <Footer/>
     </div>
   );
 }
