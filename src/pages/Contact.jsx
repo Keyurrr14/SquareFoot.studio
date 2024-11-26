@@ -28,7 +28,7 @@ export default function Contact() {
           }}
         />
         <div className="absolute inset-0 bg-black opacity-75" />
-        <h1 className="font-mounties text-light-brown relative z-10 text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-center px-4">
+        <h1 className="font-marbley text-light-brown relative z-10 text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-center px-4">
           Contact
         </h1>
         <h1 className="font-marbley text-light-brown relative z-10 text-base xs:text-lg sm:text-xl md:text-2xl w-[95%] xs:w-[90%] sm:w-[70%] md:w-[50%] lg:w-[50%] text-center mt-4 xs:mt-6 sm:mt-8 md:mt-10 px-2 xs:px-4">

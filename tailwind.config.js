@@ -9,6 +9,7 @@ module.exports = {
         mounties: ['MountiesRegular'],
         manrope: ['Manrope'],
         marbley: ['MarbleyRegular'],
+        southam: ['SouthamDemo']
       },
       colors: {
         'beige': '#F3F2EB',

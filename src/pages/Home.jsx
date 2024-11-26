@@ -50,9 +50,8 @@ export default function Home() {
         <div className="w-full min-h-screen px-4 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
           <div className="flex flex-col items-start justify-start mt-6 md:mt-10">
             <h1 className="font-marbley text-brown relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-left tracking-tighter">
-              By creating purposeful spaces with meticulously selected
-              furnishings, our bespoke interiors are built to stand the test of
-              time.
+              Square Foot Studio designs functional, stunning spaces for homes,
+              offices, and commercial projects with innovation and precision.
             </h1>
             <img
               src={HomeImage2}
@@ -67,11 +66,17 @@ export default function Home() {
                 alt="HomeImage1"
                 className="object-cover w-full sm:w-[85%] md:w-3/4 h-[40vh] sm:h-[45vh] md:h-[75vh] lg:h-[85vh]"
               />
-              <p className="font-manrope text-brown text-base sm:text-lg md:text-xl mt-4 sm:mt-6 md:mt-8 w-full sm:w-[85%] md:w-3/4 text-left md:text-right leading-relaxed">
+              <p className="font-manrope text-brown text-base sm:text-lg md:text-xl mt-4 sm:mt-6 md:mt-8 w-full sm:w-[85%] md:w-3/4 text-left md:text-left leading-relaxed">
                 The Mumbai-based studio, founded by
                 <span className="italic font-bold"> Faisal Azam</span>, was
                 formed out of a passion to reconnect people with style, insight
                 and comfortable living.
+              </p>
+              <p className="font-manrope text-brown text-base sm:text-lg md:text-xl mt-4 sm:mt-6 md:mt-8 w-full sm:w-[85%] md:w-3/4 text-left md:text-left leading-relaxed">
+                Whether you're looking to build your dream home, renovate your
+                office, or design a bespoke commercial space, our team of
+                experts brings innovation, craftsmanship, and attention to
+                detail to every project.
               </p>
             </div>
             <div className="flex flex-row gap-2 sm:gap-3 md:gap-4 mt-6 sm:mt-8 md:mt-10 w-full sm:w-[85%] md:w-3/4">

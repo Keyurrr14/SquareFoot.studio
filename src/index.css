@@ -18,6 +18,13 @@
     font-display: swap;
   }
 
+  @font-face {
+    font-family: 'SouthamDemo';
+    src: url('assets/fonts/SouthamDemo.otf') format('opentype');
+    font-style: normal;
+    font-display: swap;
+  }
+
 
 
 html.lenis {
