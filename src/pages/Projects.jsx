@@ -9,19 +9,19 @@ export default function Projects() {
     initial: { opacity: 0, y: 50 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true },
-    transition: { duration: 0.8, ease: "easeOut" }
+    transition: { duration: 0.8, ease: "easeOut" },
   };
 
   const fadeIn = {
     initial: { opacity: 0 },
     whileInView: { opacity: 1 },
     viewport: { once: true },
-    transition: { duration: 1.2, ease: "easeOut" }
+    transition: { duration: 1.2, ease: "easeOut" },
   };
 
   return (
     <div className="min-h-screen bg-beige">
-      <motion.div 
+      <motion.div
         className="flex flex-col items-center justify-center mt-4 sm:mt-6 md:mt-8 lg:mt-10 px-4"
         {...fadeInUp}
       >
@@ -53,7 +53,7 @@ export default function Projects() {
         order={[3, 2, 1]}
         animation={fadeIn}
       />
-      
+      <hr className="w-full mx-4 border-brown my-8 sm:my-10 md:my-12" />
       <ProjectSection
         type="Residential"
         location="Oberoi Sky City"

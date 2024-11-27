@@ -25,7 +25,10 @@
     font-display: swap;
   }
 
-
+  ::selection {
+    background-color: burlywood;
+    color: black;
+  }
 
 html.lenis {
   height: auto;
