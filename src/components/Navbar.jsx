@@ -109,6 +109,13 @@ function Navbar() {
             isOpen ? "opacity-100 translate-y-0 delay-300" : "opacity-0 -translate-y-10 delay-0"
           }`}>
             <NavLink
+              to="/"
+              className="text-4xl font-marbley text-brown hover:text-gray-900 transition-transform duration-300 hover:scale-105"
+              onClick={() => setIsOpen(false)}
+            >
+              Home
+            </NavLink>
+            <NavLink
               to="/about"
               className="text-4xl font-marbley text-brown hover:text-gray-900 transition-transform duration-300 hover:scale-105"
               onClick={() => setIsOpen(false)}
