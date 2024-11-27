@@ -18,7 +18,7 @@ export default function About() {
             into timeless masterpieces.
           </h1>
 
-          <div className="w-[98%] h-screen bg-brown mx-auto my-5 relative overflow-hidden flex flex-col items-center justify-center"></div>
+          <div className="w-[98%] h-screen bg-brown mx-auto my-14 relative overflow-hidden flex flex-col items-center justify-center"></div>
 
           <div className="w-full min-h-screen px-4 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
             <div className="flex flex-col items-start justify-start mt-6 md:mt-10">
