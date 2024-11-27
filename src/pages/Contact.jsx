@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import HomeImage2 from "../assets/images/HomeImage2.webp";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   const [scale, setScale] = useState(1);
@@ -28,20 +29,40 @@ export default function Contact() {
           }}
         />
         <div className="absolute inset-0 bg-black opacity-75" />
-        <h1 className="font-marbley text-light-brown relative z-10 text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-center px-4">
+        <motion.h1 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="font-marbley text-light-brown relative z-10 text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-center px-4"
+        >
           Contact
-        </h1>
-        <h1 className="font-marbley text-light-brown relative z-10 text-base xs:text-lg sm:text-xl md:text-2xl w-[95%] xs:w-[90%] sm:w-[70%] md:w-[50%] lg:w-[50%] text-center mt-4 xs:mt-6 sm:mt-8 md:mt-10 px-2 xs:px-4">
+        </motion.h1>
+        <motion.h1 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="font-marbley text-light-brown relative z-10 text-base xs:text-lg sm:text-xl md:text-2xl w-[95%] xs:w-[90%] sm:w-[70%] md:w-[50%] lg:w-[50%] text-center mt-4 xs:mt-6 sm:mt-8 md:mt-10 px-2 xs:px-4"
+        >
           Don't hesitate to get in touch with us if you want to find out
           about design services that incorporate luxurious living and timeless
           interiors.
-        </h1>
-        <h1 className="font-marbley text-light-brown relative z-10 text-xl xs:text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-center mt-10 sm:mt-16 md:mt-20 px-4 break-all sm:break-normal cursor-pointer">
+        </motion.h1>
+        <motion.h1 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="font-marbley text-light-brown relative z-10 text-xl xs:text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-center mt-10 sm:mt-16 md:mt-20 px-4 break-all sm:break-normal cursor-pointer"
+        >
           squarefootstudio@gmail.com
-        </h1>
-        <h1 className="font-marbley text-light-brown relative z-10 text-base xs:text-lg sm:text-xl md:text-2xl w-[95%] xs:w-[90%] sm:w-[70%] md:w-[50%] lg:w-[50%] text-center px-2 xs:px-4">
+        </motion.h1>
+        <motion.h1 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="font-marbley text-light-brown relative z-10 text-base xs:text-lg sm:text-xl md:text-2xl w-[95%] xs:w-[90%] sm:w-[70%] md:w-[50%] lg:w-[50%] text-center px-2 xs:px-4"
+        >
           +91 9372341605
-        </h1>
+        </motion.h1>
       </div>
       <div className="p-5"></div>
     </div>

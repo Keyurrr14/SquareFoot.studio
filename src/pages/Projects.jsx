@@ -1,12 +1,30 @@
+import { motion } from "framer-motion";
 import HomeImage3 from "../assets/images/HomeImage3.webp";
 import HomeImage4 from "../assets/images/HomeImage4.webp";
 // import LogoMarquee from "../components/LogoMarquee";
 import ProjectSection from "../components/ProjectSection";
 
 export default function Projects() {
+  const fadeInUp = {
+    initial: { opacity: 0, y: 50 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+    transition: { duration: 0.8, ease: "easeOut" }
+  };
+
+  const fadeIn = {
+    initial: { opacity: 0 },
+    whileInView: { opacity: 1 },
+    viewport: { once: true },
+    transition: { duration: 1.2, ease: "easeOut" }
+  };
+
   return (
     <div className="min-h-screen bg-beige">
-      <div className="flex flex-col items-center justify-center mt-4 sm:mt-6 md:mt-8 lg:mt-10 px-4">
+      <motion.div 
+        className="flex flex-col items-center justify-center mt-4 sm:mt-6 md:mt-8 lg:mt-10 px-4"
+        {...fadeInUp}
+      >
         <h1 className="font-marbley text-center text-brown text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl">
           Projects
         </h1>
@@ -15,7 +33,7 @@ export default function Projects() {
           take into consideration the client's style, personality and specific
           needs to ensure their vision is executed perfectly.
         </p>
-      </div>
+      </motion.div>
       <div className="mt-4 sm:mt-5"></div>
       {/* <LogoMarquee /> */}
       <ProjectSection
@@ -24,6 +42,7 @@ export default function Projects() {
         image1={HomeImage4}
         image2={HomeImage3}
         order={[1, 2, 3]}
+        animation={fadeIn}
       />
       <hr className="w-full mx-4 border-brown my-8 sm:my-10 md:my-12" />
       <ProjectSection
@@ -32,6 +51,7 @@ export default function Projects() {
         image1={HomeImage4}
         image2={HomeImage3}
         order={[3, 2, 1]}
+        animation={fadeIn}
       />
       
       <ProjectSection
@@ -40,6 +60,7 @@ export default function Projects() {
         image1={HomeImage4}
         image2={HomeImage3}
         order={[1, 2, 3]}
+        animation={fadeIn}
       />
     </div>
   );
