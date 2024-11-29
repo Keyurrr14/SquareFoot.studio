@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import HeroImage from "../assets/images/HeroImage.webp";
 import LogoMarquee from "../components/LogoMarquee";
 import WhyChooseUs from "../components/WhyChooseUs";
+import CountUp from 'react-countup';
 
 export default function Home() {
   const [scale, setScale] = useState(1);
@@ -177,28 +178,66 @@ export default function Home() {
             Let our numbers do the talking!
           </h1>
           <div className="flex flex-row justify-center items-center gap-8 md:gap-16 mt-14 mx-auto max-w-5xl px-4">
-            <div className="text-center flex-1">
-              <p className="font-marbley text-black text-3xl sm:text-4xl md:text-5xl">
-                100+
-              </p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center flex-1"
+            >
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="font-marbley text-black text-3xl sm:text-4xl md:text-5xl"
+              >
+                <CountUp end={100} duration={2} suffix="+" />
+              </motion.p>
               <p className="font-manrope text-black mt-2">Expert Team</p>
-            </div>
-            <div className="text-center flex-1">
-              <p className="font-marbley text-black text-3xl sm:text-4xl md:text-5xl">
-                100,000+
-              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-center flex-1"
+            >
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="font-marbley text-black text-3xl sm:text-4xl md:text-5xl"
+              >
+                <CountUp end={100000} duration={2} suffix="+" />
+              </motion.p>
               <p className="font-manrope text-black mt-2">
                 Residential Projects Delivered (sq.ft)
               </p>
-            </div>
-            <div className="text-center flex-1">
-              <p className="font-marbley text-black text-3xl sm:text-4xl md:text-5xl">
-                1,500,000+
-              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-center flex-1"
+            >
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="font-marbley text-black text-3xl sm:text-4xl md:text-5xl"
+              >
+                <CountUp end={1500000} duration={2} suffix="+" />
+              </motion.p>
               <p className="font-manrope text-black mt-2">
                 Commercial Projects Delivered (sq.ft)
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
 
@@ -206,9 +245,7 @@ export default function Home() {
 
         <div className="mt-10"></div>
 
-        <div>
-
-        </div>
+        <div></div>
 
         {/* <div className="w-full min-h-screen px-4 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
           <div className="flex flex-col items-start justify-start mt-6 md:mt-10">

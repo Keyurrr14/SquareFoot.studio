@@ -53,8 +53,9 @@ import Today from "../assets/images/logos/Today.webp";
 import UMC from "../assets/images/logos/UMC.webp";
 import Wipro from "../assets/images/logos/Wipro.webp";
 
-
-const LogoMarqueeContent = [
+// Split logos into batches of 15
+const LogoMarqueeBatches = [];
+const allLogos = [
   { src: Adani, alt: "Adani" },
   { src: Aditya, alt: "AdityaBirla" },
   { src: Tata, alt: "Tata" },
@@ -101,46 +102,60 @@ const LogoMarqueeContent = [
   { src: Wipro, alt: "Wipro" },
 ];
 
+// Create batches of 15 logos
+for (let i = 0; i < allLogos.length; i += 13) {
+  LogoMarqueeBatches.push(allLogos.slice(i, i + 13));
+}
+
 function LogoMarquee({ direction = 'horizontal', verticalDirection = 'up' }) {
   const isVertical = direction === 'vertical';
   
   return (
-    <div className={`${isVertical ? 'flex-col h-full' : 'flex'} overflow-hidden  relative`}>
-      {[0, 1].map((_, i) => (
-        <div
-          key={i}
-          className={`
-            ${isVertical 
-              ? verticalDirection === 'up' 
-                ? 'animate-marqueeVertical' 
-                : 'animate-marqueeVerticalReverse'
-              : 'animate-marquee'
-            } 
-            py-4 whitespace-nowrap flex
-            ${isVertical ? 'flex-col' : 'flex-row'}
-            items-center justify-around
-            ${isVertical ? 'min-h-full' : 'min-w-full'}
-          `}
-          {...(i === 1 ? { "aria-hidden": "true" } : {})}
+    <div className="space-y-1">
+      {LogoMarqueeBatches.map((batch, batchIndex) => (
+        <div 
+          key={batchIndex}
+          className={`${isVertical ? 'flex-col h-full' : 'flex'} overflow-hidden relative`}
         >
-          {LogoMarqueeContent.map((logo, index) => (
-            <div 
-              key={index} 
+          {[0, 1].map((_, i) => (
+            <div
+              key={i}
               className={`
-                flex items-center justify-center
-                ${isVertical ? 'py-14' : 'px-2 sm:px-4 md:px-6'}
-                ${isVertical ? 'w-full' : 'flex-1'}
+                ${isVertical 
+                  ? verticalDirection === 'up' 
+                    ? 'animate-marqueeVertical' 
+                    : 'animate-marqueeVerticalReverse'
+                  : batchIndex % 2 === 0 
+                    ? 'animate-marquee' 
+                    : 'animate-marqueeReverse'
+                } 
+                whitespace-nowrap flex
+                ${isVertical ? 'flex-col' : 'flex-row'}
+                items-center justify-around
+                ${isVertical ? 'min-h-full' : 'min-w-full'}
               `}
+              {...(i === 1 ? { "aria-hidden": "true" } : {})}
             >
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className={`object-contain flex-shrink-0 ${
-                  logo.alt === "Meta" 
-                    ? "h-20 sm:h-24 md:h-28 lg:h-32" 
-                    : "h-16 w-36 sm:h-20 sm:w-44 md:h-24 md:w-52 lg:h-28 lg:w-60"
-                } ${isVertical ? 'rotate-90' : ''}`}
-              />
+              {batch.map((logo, index) => (
+                <div 
+                  key={index} 
+                  className={`
+                    flex items-center justify-center
+                    ${isVertical ? 'py-14' : 'px-2 sm:px-4 md:px-6'}
+                    ${isVertical ? 'w-full' : 'flex-1'}
+                  `}
+                >
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className={`object-contain flex-shrink-0 ${
+                      logo.alt === "Meta" 
+                        ? "h-20 sm:h-24 md:h-28 lg:h-32" 
+                        : "h-16 w-36 sm:h-20 sm:w-44 md:h-24 md:w-52 lg:h-28 lg:w-60"
+                    } ${isVertical ? 'rotate-90' : ''}`}
+                  />
+                </div>
+              ))}
             </div>
           ))}
         </div>

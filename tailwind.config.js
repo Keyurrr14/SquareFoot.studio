@@ -10,7 +10,8 @@ module.exports = {
         southam: ["SouthamDemo"],
       },
       animation: {
-        marquee: "marquee 30s linear infinite",
+        marquee: "marquee 25s linear infinite",
+        marqueeReverse: "marqueeReverse 25s linear infinite",
         marquee2: "marquee2 40s linear infinite",
         marqueeVertical: "marqueeVertical 30s linear infinite",
         marqueeVertical2: "marqueeVertical2 40s linear infinite",
@@ -18,8 +19,12 @@ module.exports = {
       },
       keyframes: {
         marquee: {
-          from: { transform: "translateX(0%)" },
-          to: { transform: "translateX(-100%)" },
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+        marqueeReverse: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(0%)" },
         },
         marquee2: {
           "0%": { transform: "translateX(100%)" },
