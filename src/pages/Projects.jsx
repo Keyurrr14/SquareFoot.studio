@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import HomeImage3 from "../assets/images/HomeImage3.webp";
 import HomeImage4 from "../assets/images/HomeImage4.webp";
-// import LogoMarquee from "../components/LogoMarquee";
+import LogoMarquee from "../components/LogoMarquee";
 import ProjectSection from "../components/ProjectSection";
 
 export default function Projects() {
@@ -35,7 +35,7 @@ export default function Projects() {
         </p>
       </motion.div>
       <div className="mt-4 sm:mt-5"></div>
-      {/* <LogoMarquee /> */}
+      <LogoMarquee />
       <ProjectSection
         type="Residential"
         location="Oberoi Sky City"

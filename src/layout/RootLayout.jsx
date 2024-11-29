@@ -15,7 +15,7 @@ function RootLayout() {
   }, [location, lenis]);
 
   return (
-    <div className="min-h-screen bg-beige">
+    <div className="min-h-screen bg-white">
       <Navbar />
       <main data-scroll-container>
         <Outlet />
