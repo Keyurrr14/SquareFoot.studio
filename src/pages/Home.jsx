@@ -146,8 +146,8 @@ export default function Home() {
           <LogoMarquee />
         </div>
 
-        <div>
-          <h1 className="font-marbley text-black relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter text-center mt-8 sm:mt-12 md:mt-16">
+        <div className="">
+          <h1 id="about" className="font-marbley text-black relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter text-center mt-8 sm:mt-12 md:mt-16">
             About Us
           </h1>
           <p className="font-manrope font-normal text-black text-sm sm:text-base md:text-lg mt-4 sm:mt-6 w-full sm:w-[85%] md:w-3/4 mx-auto text-justify leading-relaxed">

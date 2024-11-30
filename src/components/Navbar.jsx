@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import Link from "react-scroll/modules/components/Link";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,10 +17,16 @@ function Navbar() {
           </NavLink>
 
           <div className="hidden md:flex space-x-16 font-manrope font-semibold text-brown">
-            <NavLink to="/about" className="relative group flex items-center">
+            <Link
+              to="about"
+              smooth={true}
+              duration={500}
+              offset={-150}
+              className="relative group flex items-center cursor-pointer"
+            >
               <span className="absolute left-0 w-1.5 h-1.5 rounded-full bg-brown transform scale-0 group-hover:scale-100 transition-transform duration-200 -translate-x-4"></span>
               About
-            </NavLink>
+            </Link>
             <NavLink
               to="/services"
               className="relative group flex items-center"
@@ -34,10 +41,7 @@ function Navbar() {
               <span className="absolute left-0 w-1.5 h-1.5 rounded-full bg-brown transform scale-0 group-hover:scale-100 transition-transform duration-200 -translate-x-4"></span>
               Projects
             </NavLink>
-            <NavLink
-              to="/contact"
-              className="relative group flex items-center"
-            >
+            <NavLink to="/contact" className="relative group flex items-center">
               <span className="absolute left-0 w-1.5 h-1.5 rounded-full bg-brown transform scale-0 group-hover:scale-100 transition-transform duration-200 -translate-x-4"></span>
               Contact
             </NavLink>
