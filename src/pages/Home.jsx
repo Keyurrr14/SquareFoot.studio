@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import HeroImage from "../assets/images/HeroImage.webp";
 import LogoMarquee from "../components/LogoMarquee";
 import WhyChooseUs from "../components/WhyChooseUs";
-import CountUp from 'react-countup';
+import CountUp from "react-countup";
 
 export default function Home() {
   const [scale, setScale] = useState(1);
@@ -139,15 +139,187 @@ export default function Home() {
           </div>
         </motion.div>
 
-        <div className="my-8">
+        <div className="flex">
+          <div className="w-1/2 h-screen flex flex-col items-center justify-center gap-10">
+            <div className="w-1/2 flex items-center justify-center">
+              <div className="flex items-center justify-between gap-10">
+                <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="font-marbley text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center"
+                >
+                  Completed Projects
+                </motion.h1>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="w-28 h-20 rounded-lg flex items-center justify-center"
+                >
+                  <h1 className="font-marbley text-black text-xl sm:text-2xl md:text-3xl">
+                    <CountUp end={2800} duration={2} suffix="+" />
+                  </h1>
+                </motion.div>
+              </div>
+            </div>
+
+            <div className="w-1/2 flex items-center justify-center">
+              <div className="flex items-center justify-between gap-10">
+                <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="font-marbley text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center"
+                >
+                  Ongoing Projects
+                </motion.h1>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="w-32 h-32 bg-white rounded-lg flex items-center justify-center"
+                >
+                  <h1 className="font-marbley text-black text-xl sm:text-2xl md:text-3xl">
+                    <CountUp end={150} duration={2} suffix="+" />
+                  </h1>
+                </motion.div>
+              </div>
+            </div>
+
+            <div className="w-1/2 flex items-center justify-center">
+              <div className="flex items-center justify-between gap-10">
+                <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="font-marbley text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center"
+                >
+                  Man Hours
+                </motion.h1>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="w-32 h-32 bg-white rounded-lg flex items-center justify-center"
+                >
+                  <h1 className="font-marbley text-black text-xl sm:text-2xl md:text-3xl">
+                    <CountUp end={50000} duration={2} suffix="+" />
+                  </h1>
+                </motion.div>
+              </div>
+            </div>
+          </div>
+          <div className="w-1/2 h-screen flex flex-col justify-center px-8">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="font-marbley text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+            >
+              Who are we?
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="font-manrope text-black text-sm sm:text-base md:text-lg leading-relaxed"
+            >
+              We're more than designers – we're storytellers of spaces, crafting
+              environments that reflect your dreams and aspirations. With
+              expertise in Architecture Design & Consultancy, Interior Design &
+              Build, and 3D Visualization with Walkthrough Animation, we bring
+              your ideas to life, down to the finest detail. <br /> <br />7 From
+              guiding you with Project Feasibility Studies to harmonizing your
+              space through Vastu Consultancy, we're here to create places that
+              feel like home, work like a charm, and inspire every moment. Your
+              vision is our blueprint, and together, we'll build something
+              extraordinary.
+            </motion.p>
+          </div>
+        </div>
+
+        <div className="flex">
+          <div className="w-1/2 h-screen flex flex-col justify-center px-8">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="font-marbley text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+            >
+              What we offer?
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="font-manrope text-black text-sm sm:text-base md:text-lg leading-relaxed"
+            >
+              Our comprehensive services cater to diverse design and construction needs, 
+              ensuring a seamless experience from concept to completion:
+            </motion.p>
+            <motion.ul 
+              className="mt-6 space-y-4 font-manrope text-black text-sm sm:text-base md:text-lg leading-relaxed"
+            >
+              {[
+                {
+                  title: "Architecture Design & Consultancy:",
+                  description: "We design with purpose and passion, blending aesthetics and functionality to create spaces that inspire and elevate your lifestyle."
+                },
+                {
+                  title: "Interior Design & Build:",
+                  description: "Transforming interiors with bespoke designs and precise execution to reflect your personality and needs."
+                },
+                {
+                  title: "3D Visualization & Walkthrough Animation:",
+                  description: "Bringing ideas to life through immersive 3D renderings and animations, helping you visualize your project before it begins."
+                },
+                {
+                  title: "Project Feasibility Studies:",
+                  description: "Every great project starts with the right foundation. Our detailed assessments give you confidence to make informed decisions for a successful outcome."
+                },
+                {
+                  title: "Vastu Consultancy:",
+                  description: "Incorporating traditional principles to create harmonious and balanced spaces"
+                }
+              ].map((item, index) => (
+                <motion.li
+                  key={item.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                >
+                  <span className="font-semibold">{item.title}</span> {item.description}
+                </motion.li>
+              ))}
+            </motion.ul>
+          </div>
+          <div className="w-1/2 h-screen bg-blue-500"></div>
+        </div>
+
+        {/*<div className="my-8">
           <h1 className="font-marbley text-black relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter text-center my-4 sm:my-8 md:my-12">
             Noted Clients
           </h1>
           <LogoMarquee />
-        </div>
+        </div>*/}
 
         <div className="">
-          <h1 id="about" className="font-marbley text-black relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter text-center mt-8 sm:mt-12 md:mt-16">
+          <h1
+            id="about"
+            className="font-marbley text-black relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter text-center mt-8 sm:mt-12 md:mt-16"
+          >
             About Us
           </h1>
           <p className="font-manrope font-normal text-black text-sm sm:text-base md:text-lg mt-4 sm:mt-6 w-full sm:w-[85%] md:w-3/4 mx-auto text-justify leading-relaxed">
