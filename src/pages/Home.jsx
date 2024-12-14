@@ -4,6 +4,7 @@ import HeroImage from "../assets/images/HeroImage.webp";
 import LogoMarquee from "../components/LogoMarquee";
 import WhyChooseUs from "../components/WhyChooseUs";
 import CountUp from "react-countup";
+import FeatureCard from "../components/FeatureCard";
 
 export default function Home() {
   const [scale, setScale] = useState(1);
@@ -139,10 +140,12 @@ export default function Home() {
           </div>
         </motion.div>
 
-        <div className="flex">
-          <div className="w-1/2 h-screen flex flex-col items-center justify-center gap-10">
-            <div className="w-1/2 flex items-center justify-center">
-              <div className="flex items-center justify-between gap-10">
+        <div className="flex flex-col lg:flex-row lg:my-20">
+          {/* Left side - Stats */}
+          <div className="w-full lg:w-1/2 py-12 lg:py-0 flex flex-col items-center justify-center gap-10 px-4">
+            {/* Completed Projects */}
+            <div className="w-full sm:w-4/5 lg:w-1/2 flex items-center justify-center">
+              <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-4 sm:gap-10">
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -166,8 +169,9 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="w-1/2 flex items-center justify-center">
-              <div className="flex items-center justify-between gap-10">
+            {/* Ongoing Projects */}
+            <div className="w-full sm:w-4/5 lg:w-1/2 flex items-center justify-center">
+              <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-4 sm:gap-10">
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -182,7 +186,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="w-32 h-32 bg-white rounded-lg flex items-center justify-center"
+                  className="w-28 h-20 bg-white rounded-lg flex items-center justify-center"
                 >
                   <h1 className="font-marbley text-black text-xl sm:text-2xl md:text-3xl">
                     <CountUp end={150} duration={2} suffix="+" />
@@ -191,8 +195,9 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="w-1/2 flex items-center justify-center">
-              <div className="flex items-center justify-between gap-10">
+            {/* Man Hours */}
+            <div className="w-full sm:w-4/5 lg:w-1/2 flex items-center justify-center">
+              <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-4 sm:gap-10">
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -207,7 +212,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="w-32 h-32 bg-white rounded-lg flex items-center justify-center"
+                  className="w-28 h-20 bg-white rounded-lg flex items-center justify-center"
                 >
                   <h1 className="font-marbley text-black text-xl sm:text-2xl md:text-3xl">
                     <CountUp end={50000} duration={2} suffix="+" />
@@ -216,7 +221,9 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="w-1/2 h-screen flex flex-col justify-center px-8">
+
+          {/* Right side - Who are we? */}
+          <div className="w-full lg:w-1/2 flex flex-col justify-center px-4 sm:px-8 py-12 lg:py-0">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -237,18 +244,18 @@ export default function Home() {
               environments that reflect your dreams and aspirations. With
               expertise in Architecture Design & Consultancy, Interior Design &
               Build, and 3D Visualization with Walkthrough Animation, we bring
-              your ideas to life, down to the finest detail. <br /> <br />7 From
-              guiding you with Project Feasibility Studies to harmonizing your
-              space through Vastu Consultancy, we're here to create places that
-              feel like home, work like a charm, and inspire every moment. Your
-              vision is our blueprint, and together, we'll build something
+              your ideas to life, down to the finest detail. <br /> <br />
+              From guiding you with Project Feasibility Studies to harmonizing
+              your space through Vastu Consultancy, we're here to create places
+              that feel like home, work like a charm, and inspire every moment.
+              Your vision is our blueprint, and together, we'll build something
               extraordinary.
             </motion.p>
           </div>
         </div>
 
-        <div className="flex">
-          <div className="w-1/2 h-screen flex flex-col justify-center px-8">
+        <div className="flex flex-col lg:flex-row">
+          <div className="w-full lg:w-1/2 min-h-screen flex flex-col justify-center px-4 sm:px-6 lg:px-8 py-12 lg:py-0">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -265,47 +272,197 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="font-manrope text-black text-sm sm:text-base md:text-lg leading-relaxed"
             >
-              Our comprehensive services cater to diverse design and construction needs, 
-              ensuring a seamless experience from concept to completion:
+              Our comprehensive services cater to diverse design and
+              construction needs, ensuring a seamless experience from concept to
+              completion:
             </motion.p>
-            <motion.ul 
-              className="mt-6 space-y-4 font-manrope text-black text-sm sm:text-base md:text-lg leading-relaxed"
-            >
-              {[
-                {
-                  title: "Architecture Design & Consultancy:",
-                  description: "We design with purpose and passion, blending aesthetics and functionality to create spaces that inspire and elevate your lifestyle."
-                },
-                {
-                  title: "Interior Design & Build:",
-                  description: "Transforming interiors with bespoke designs and precise execution to reflect your personality and needs."
-                },
-                {
-                  title: "3D Visualization & Walkthrough Animation:",
-                  description: "Bringing ideas to life through immersive 3D renderings and animations, helping you visualize your project before it begins."
-                },
-                {
-                  title: "Project Feasibility Studies:",
-                  description: "Every great project starts with the right foundation. Our detailed assessments give you confidence to make informed decisions for a successful outcome."
-                },
-                {
-                  title: "Vastu Consultancy:",
-                  description: "Incorporating traditional principles to create harmonious and balanced spaces"
-                }
-              ].map((item, index) => (
-                <motion.li
-                  key={item.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                >
-                  <span className="font-semibold">{item.title}</span> {item.description}
-                </motion.li>
-              ))}
+            <motion.ul className="mt-6 space-y-6 sm:space-y-4 font-manrope text-black text-sm sm:text-base md:text-lg leading-relaxed">
+              <motion.li
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="grid grid-cols-1 sm:grid-cols-[auto,1fr] gap-1 sm:gap-4"
+              >
+                <p>
+                  <span className="font-semibold">
+                    Architecture Design & Consultancy:
+                  </span>{" "}
+                  We design with purpose and passion, blending aesthetics and
+                  functionality to create spaces that inspire and elevate your
+                  lifestyle.
+                </p>
+                <span className="text-gray-700"></span>
+              </motion.li>
+
+              <motion.li
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="grid grid-cols-1 sm:grid-cols-[auto,1fr] gap-1 sm:gap-4"
+              >
+                <p>
+                  <span className="font-semibold">
+                    Interior Design & Build:
+                  </span>{" "}
+                  Transforming interiors with bespoke designs and precise
+                  execution to reflect your personality and needs.
+                </p>
+                <span className="text-gray-700"></span>
+              </motion.li>
+
+              <motion.li
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="grid grid-cols-1 sm:grid-cols-[auto,1fr] gap-1 sm:gap-4"
+              >
+                <p>
+                  <span className="font-semibold">
+                    3D Visualization & Walkthrough Animation:
+                  </span>{" "}
+                  Bringing ideas to life through immersive 3D renderings and
+                  animations, helping you visualize your project before it
+                  begins.
+                </p>
+                <span className="text-gray-700"></span>
+              </motion.li>
+
+              <motion.li
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="grid grid-cols-1 sm:grid-cols-[auto,1fr] gap-1 sm:gap-4"
+              >
+                <p>
+                  <span className="font-semibold">
+                    Project Feasibility Studies:
+                  </span>{" "}
+                  Every great project starts with the right foundation. Our
+                  detailed assessments give you confidence to make informed
+                  decisions for a successful outcome.
+                </p>
+                <span className="text-gray-700"></span>
+              </motion.li>
+
+              <motion.li
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+                className="grid grid-cols-1 sm:grid-cols-[auto,1fr] gap-1 sm:gap-4"
+              >
+                <p>
+                  <span className="font-semibold"> Vastu Consultancy:</span>
+                  Incorporating traditional principles to create harmonious and
+                  balanced spaces
+                </p>
+                <span className="text-gray-700"></span>
+              </motion.li>
             </motion.ul>
           </div>
-          <div className="w-1/2 h-screen bg-blue-500"></div>
+          <div className="w-full lg:w-1/2 p-4 lg:p-8 my-12">
+            <div className="grid grid-cols-2 gap-4 lg:gap-6">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="text-center border border-light-black/30 p-3 sm:p-4 rounded-lg flex items-center justify-center transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg bg-white min-h-[120px]"
+              >
+                <h1 className="font-marbley text-black text-sm sm:text-xl lg:text-2xl xl:text-3xl">
+                  Designing Future with Excellence
+                </h1>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-center border border-light-black/30 p-3 sm:p-4 rounded-lg flex items-center justify-center transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg bg-white min-h-[120px]"
+              >
+                <h1 className="font-marbley text-black text-sm sm:text-xl lg:text-2xl xl:text-3xl">
+                  Client Centric Approach
+                </h1>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-center border border-light-black/30 p-3 sm:p-4 rounded-lg flex items-center justify-center transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg bg-white min-h-[120px]"
+              >
+                <h1 className="font-marbley text-black text-sm sm:text-xl lg:text-2xl xl:text-3xl">
+                  Sustainable, Innovative & Functional Desgins
+                </h1>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="text-center border border-light-black/30 p-3 sm:p-4 rounded-lg flex items-center justify-center transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg bg-white min-h-[120px]"
+              >
+                <h1 className="font-marbley text-black text-sm sm:text-xl lg:text-2xl xl:text-3xl">
+                  End to End Solutions, Turnkey Projects
+                </h1>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="text-center border border-light-black/30 p-3 sm:p-4 rounded-lg flex items-center justify-center transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg bg-white min-h-[120px]"
+              >
+                <h1 className="font-marbley text-black text-sm sm:text-xl lg:text-2xl xl:text-3xl">
+                  Expert Team of Professionals
+                </h1>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="text-center border border-light-black/30 p-3 sm:p-4 rounded-lg flex items-center justify-center transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg bg-white min-h-[120px]"
+              >
+                <h1 className="font-marbley text-black text-sm sm:text-xl lg:text-2xl xl:text-3xl">
+                  Focus on Long term Relations
+                </h1>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="text-center border border-light-black/30 p-3 sm:p-4 rounded-lg flex items-center justify-center transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg bg-white min-h-[120px]"
+              >
+                <h1 className="font-marbley text-black text-sm sm:text-xl lg:text-2xl xl:text-3xl">
+                  Commitment to Quality
+                </h1>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+                className="text-center border border-light-black/30 p-3 sm:p-4 rounded-lg flex items-center justify-center transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg bg-white min-h-[120px]"
+              >
+                <h1 className="font-marbley text-black text-sm sm:text-xl lg:text-2xl xl:text-3xl">
+                  Hassle Free Timely Assured Project Delivery
+                </h1>
+              </motion.div>
+            </div>
+          </div>
         </div>
 
         {/*<div className="my-8">
@@ -315,14 +472,14 @@ export default function Home() {
           <LogoMarquee />
         </div>*/}
 
-        <div className="">
+        <div className="px-4 sm:px-6 md:px-8">
           <h1
             id="about"
             className="font-marbley text-black relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter text-center mt-8 sm:mt-12 md:mt-16"
           >
             About Us
           </h1>
-          <p className="font-manrope font-normal text-black text-sm sm:text-base md:text-lg mt-4 sm:mt-6 w-full sm:w-[85%] md:w-3/4 mx-auto text-justify leading-relaxed">
+          <p className="font-manrope font-normal text-black text-sm sm:text-base md:text-lg mt-4 sm:mt-6 w-[95%] sm:w-[85%] md:w-3/4 mx-auto text-justify sm:text-justify leading-relaxed px-2 sm:px-0">
             Welcome to squarefoot.studio, a leading architecture and interior
             design firm where creativity meets functionality. We specialize in
             transforming ideas into stunning spaces that reflect your vision and
@@ -346,27 +503,29 @@ export default function Home() {
         </div>
 
         <div className="mt-20">
-          <h1 className="font-marbley text-black relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter text-center mt-8 sm:mt-12 md:mt-16">
+          <h1 className="font-marbley text-black relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter text-center mt-8 sm:mt-12 md:mt-16 px-4">
             Let our numbers do the talking!
           </h1>
-          <div className="flex flex-row justify-center items-center gap-8 md:gap-16 mt-14 mx-auto max-w-5xl px-4">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-12 sm:gap-8 md:gap-16 mt-14 mx-auto max-w-5xl px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-center flex-1"
+              className="text-center w-full sm:flex-1"
             >
               <motion.p
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="font-marbley text-black text-3xl sm:text-4xl md:text-5xl"
+                className="font-marbley text-black text-4xl sm:text-3xl md:text-4xl lg:text-5xl"
               >
                 <CountUp end={100} duration={2} suffix="+" />
               </motion.p>
-              <p className="font-manrope text-black mt-2">Expert Team</p>
+              <p className="font-manrope text-black mt-2 text-base sm:text-sm md:text-base">
+                Expert Team
+              </p>
             </motion.div>
 
             <motion.div
@@ -374,18 +533,18 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-center flex-1"
+              className="text-center w-full sm:flex-1"
             >
               <motion.p
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="font-marbley text-black text-3xl sm:text-4xl md:text-5xl"
+                className="font-marbley text-black text-4xl sm:text-3xl md:text-4xl lg:text-5xl"
               >
                 <CountUp end={100000} duration={2} suffix="+" />
               </motion.p>
-              <p className="font-manrope text-black mt-2">
+              <p className="font-manrope text-black mt-2 text-base sm:text-sm md:text-base px-4">
                 Residential Projects Delivered (sq.ft)
               </p>
             </motion.div>
@@ -395,18 +554,18 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-center flex-1"
+              className="text-center w-full sm:flex-1"
             >
               <motion.p
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="font-marbley text-black text-3xl sm:text-4xl md:text-5xl"
+                className="font-marbley text-black text-4xl sm:text-3xl md:text-4xl lg:text-5xl"
               >
                 <CountUp end={1500000} duration={2} suffix="+" />
               </motion.p>
-              <p className="font-manrope text-black mt-2">
+              <p className="font-manrope text-black mt-2 text-base sm:text-sm md:text-base px-4">
                 Commercial Projects Delivered (sq.ft)
               </p>
             </motion.div>
