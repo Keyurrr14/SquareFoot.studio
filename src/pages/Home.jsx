@@ -1,10 +1,8 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import HeroImage from "../assets/images/HeroImage.webp";
-import LogoMarquee from "../components/LogoMarquee";
 import WhyChooseUs from "../components/WhyChooseUs";
 import CountUp from "react-countup";
-import FeatureCard from "../components/FeatureCard";
 
 export default function Home() {
   const [scale, setScale] = useState(1);
@@ -144,14 +142,14 @@ export default function Home() {
           {/* Left side - Stats */}
           <div className="w-full lg:w-1/2 py-12 lg:py-0 flex flex-col items-center justify-center gap-10 px-4">
             {/* Completed Projects */}
-            <div className="w-full sm:w-4/5 lg:w-1/2 flex items-center justify-center">
-              <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-4 sm:gap-10">
+            <div className="w-full flex items-center justify-center">
+              <div className="flex flex-row items-center justify-between gap-8 sm:gap-12">
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  className="font-marbley text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center"
+                  className="font-marbley text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
                 >
                   Completed Projects
                 </motion.h1>
@@ -160,9 +158,9 @@ export default function Home() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="w-28 h-20 rounded-lg flex items-center justify-center"
+                  className="w-40 h-24 rounded-lg flex items-center justify-center"
                 >
-                  <h1 className="font-marbley text-black text-xl sm:text-2xl md:text-3xl">
+                  <h1 className="font-marbley text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
                     <CountUp end={2800} duration={2} suffix="+" />
                   </h1>
                 </motion.div>
@@ -170,14 +168,14 @@ export default function Home() {
             </div>
 
             {/* Ongoing Projects */}
-            <div className="w-full sm:w-4/5 lg:w-1/2 flex items-center justify-center">
-              <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-4 sm:gap-10">
+            <div className="w-full flex items-center justify-center">
+              <div className="flex flex-row items-center justify-between gap-8 sm:gap-12">
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  className="font-marbley text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center"
+                  className="font-marbley text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
                 >
                   Ongoing Projects
                 </motion.h1>
@@ -186,9 +184,9 @@ export default function Home() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="w-28 h-20 bg-white rounded-lg flex items-center justify-center"
+                  className="w-40 h-24 bg-white rounded-lg flex items-center justify-center"
                 >
-                  <h1 className="font-marbley text-black text-xl sm:text-2xl md:text-3xl">
+                  <h1 className="font-marbley text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
                     <CountUp end={150} duration={2} suffix="+" />
                   </h1>
                 </motion.div>
@@ -196,14 +194,14 @@ export default function Home() {
             </div>
 
             {/* Man Hours */}
-            <div className="w-full sm:w-4/5 lg:w-1/2 flex items-center justify-center">
-              <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-4 sm:gap-10">
+            <div className="w-full flex items-center justify-center">
+              <div className="flex flex-row items-center justify-between gap-8 sm:gap-12">
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  className="font-marbley text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center"
+                  className="font-marbley text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
                 >
                   Man Hours
                 </motion.h1>
@@ -212,9 +210,9 @@ export default function Home() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="w-28 h-20 bg-white rounded-lg flex items-center justify-center"
+                  className="w-40 h-24 bg-white rounded-lg flex items-center justify-center"
                 >
-                  <h1 className="font-marbley text-black text-xl sm:text-2xl md:text-3xl">
+                  <h1 className="font-marbley text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
                     <CountUp end={50000} duration={2} suffix="+" />
                   </h1>
                 </motion.div>
@@ -255,7 +253,7 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col lg:flex-row">
-          <div className="w-full lg:w-1/2 min-h-screen flex flex-col justify-center px-4 sm:px-6 lg:px-8 py-12 lg:py-0">
+          <div className="w-full lg:w-1/2 min-h-screen flex flex-col justify-center px-4 sm:px-6 lg:px-20 py-12 lg:py-0">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -364,7 +362,7 @@ export default function Home() {
               </motion.li>
             </motion.ul>
           </div>
-          <div className="w-full lg:w-1/2 p-4 lg:p-8 my-12">
+          <div className="w-full lg:w-1/2 p-4 lg:p-8 my-12 lg:px-20">
             <div className="grid grid-cols-2 gap-4 lg:gap-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
