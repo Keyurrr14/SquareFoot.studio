@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { FaInstagram } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
 function Navbar() {
@@ -9,14 +8,18 @@ function Navbar() {
     <nav className="sticky top-0 w-full z-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <NavLink
-            to="/"
-            className="text-2xl font-mounties font-bold text-brown flex-shrink-0"
-          >
-            SquareFoot.studio
-          </NavLink>
+          {/* Left: Logo */}
+          <div className="flex-shrink-0">
+            <NavLink
+              to="/"
+              className="text-2xl font-mounties font-bold text-brown"
+            >
+              SquareFoot.studio
+            </NavLink>
+          </div>
 
-          <div className="hidden md:flex space-x-16 font-manrope font-semibold text-brown">
+          {/* Right: Links */}
+          <div className="hidden md:flex ml-auto space-x-16 font-manrope font-semibold text-brown">
             <NavLink
               to="/"
               className="relative group flex items-center cursor-pointer"
@@ -31,13 +34,16 @@ function Navbar() {
               <span className="absolute left-0 w-1.5 h-1.5 rounded-full bg-brown transform scale-0 group-hover:scale-100 transition-transform duration-200 -translate-x-4"></span>
               Portfolio
             </NavLink>
-            <NavLink to="/contact" className="relative group flex items-center">
+            <NavLink
+              to="/contact"
+              className="relative group flex items-center"
+            >
               <span className="absolute left-0 w-1.5 h-1.5 rounded-full bg-brown transform scale-0 group-hover:scale-100 transition-transform duration-200 -translate-x-4"></span>
               Contact
             </NavLink>
-            <FaInstagram/>
           </div>
 
+          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button onClick={() => setIsOpen(!isOpen)} className="text-brown">
               <svg
@@ -66,6 +72,7 @@ function Navbar() {
           </div>
         </div>
 
+        {/* Mobile Menu */}
         <div
           className={`md:hidden fixed inset-0 bg-white z-50 transition-all duration-1000 ease-in-out ${
             isOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
@@ -113,29 +120,15 @@ function Navbar() {
               Home
             </NavLink>
             <NavLink
-              to="/about"
+              to="/portfolio"
               className="text-4xl font-marbley text-brown hover:text-gray-900 transition-transform duration-300 hover:scale-105"
               onClick={() => setIsOpen(false)}
             >
-              About
-            </NavLink>
-            <NavLink
-              to="/services"
-              className="text-4xl font-marbley text-brown hover:text-gray-900 transition-transform duration-300 hover:scale-105"
-              onClick={() => setIsOpen(false)}
-            >
-              Services
-            </NavLink>
-            <NavLink
-              to="/projects"
-              className="text-4xl font-marbley text-brown hover:text-gray-900 transition-transform duration-300 hover:scale-105"
-              onClick={() => setIsOpen(false)}
-            >
-              Projects
+              Portfolio
             </NavLink>
             <NavLink
               to="/contact"
-              className="text-xl mt-4 px-4 py-1 font-marbley text-brown border-2 border-brown rounded-full hover:bg-brown hover:text-white transition-all duration-300 hover:scale-105"
+              className="text-4xl font-marbley text-brown hover:text-gray-900 transition-transform duration-300 hover:scale-105"
               onClick={() => setIsOpen(false)}
             >
               Contact
