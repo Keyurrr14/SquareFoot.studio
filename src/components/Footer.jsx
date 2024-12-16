@@ -14,7 +14,7 @@ export default function Footer() {
                 Support
               </h1>
             </div>
-            <h1 className="font-manrope text-beige text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl tracking-tighter">
+            <h1 className="font-manrope text-beige cursor-pointer text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl tracking-tighter">
               connect@squarefoot.studio
             </h1>
           </div>
@@ -25,13 +25,14 @@ export default function Footer() {
                 Jobs
               </h1>
             </div>
-            <h1 className="font-manrope text-beige text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl tracking-tighter">
+            <h1 className="font-manrope text-beige cursor-pointer text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl tracking-tighter">
               careers@squarefoot.studio
             </h1>
           </div>
           <div className="w-full mt-6">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5163.491445694898!2d72.83300360315761!3d19.19491570018589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b6e9f50ed749%3A0x55ae61930faaddd!2sMith%20Chowky%20Malad!5e0!3m2!1sen!2sin!4v1734149391366!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30145.171403332508!2d72.8021047851144!3d19.18880588205961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b6914fe3a8e5%3A0x73f264109c4db9d4!2sMalad%2C%20Malad%20West%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1734254408826!5m2!1sen!2sin"
+              title="SquareFoot.studio Map"
               width="100%"
               height="200"
               style={{ border: 0 }}
@@ -57,15 +58,6 @@ export default function Footer() {
                 placeholder="Name"
               />
             </div>
-
-            <div className="mb-4">
-              <input
-                type="email"
-                className="w-full px-3 py-2 bg-transparent border-b-2 border-beige/30 font-manrope text-beige placeholder-beige/70 focus:outline-none focus:border-beige transition-colors"
-                placeholder="Email"
-              />
-            </div>
-
             <div className="mb-6">
               <input
                 type="tel"
@@ -74,8 +66,17 @@ export default function Footer() {
               />
             </div>
 
+            <div className="mb-4">
+              <input
+                type="email"
+                className="w-full px-3 py-2 bg-transparent border-b-2 border-beige/30 font-manrope text-beige placeholder-beige/70 focus:outline-none focus:border-beige transition-colors"
+                placeholder="Email (Optional)"
+              />
+            </div>
+
+
             <button className="w-full bg-transparent border border-beige text-beige font-manrope font-bold py-2 rounded-lg hover:bg-beige hover:text-[#737057] transition-all duration-300">
-              Book Free Consultation
+              Submit
             </button>
           </form>
         </div>

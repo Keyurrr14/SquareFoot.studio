@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import { FaInstagram } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import Link from "react-scroll/modules/components/Link";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,34 +17,25 @@ function Navbar() {
           </NavLink>
 
           <div className="hidden md:flex space-x-16 font-manrope font-semibold text-brown">
-            <Link
-              to="about"
-              smooth={true}
-              duration={500}
-              offset={-150}
+            <NavLink
+              to="/"
               className="relative group flex items-center cursor-pointer"
             >
               <span className="absolute left-0 w-1.5 h-1.5 rounded-full bg-brown transform scale-0 group-hover:scale-100 transition-transform duration-200 -translate-x-4"></span>
-              About
-            </Link>
-            <NavLink
-              to="/services"
-              className="relative group flex items-center"
-            >
-              <span className="absolute left-0 w-1.5 h-1.5 rounded-full bg-brown transform scale-0 group-hover:scale-100 transition-transform duration-200 -translate-x-4"></span>
-              Services
+              Home
             </NavLink>
             <NavLink
-              to="/projects"
+              to="/portfolio"
               className="relative group flex items-center"
             >
               <span className="absolute left-0 w-1.5 h-1.5 rounded-full bg-brown transform scale-0 group-hover:scale-100 transition-transform duration-200 -translate-x-4"></span>
-              Projects
+              Portfolio
             </NavLink>
             <NavLink to="/contact" className="relative group flex items-center">
               <span className="absolute left-0 w-1.5 h-1.5 rounded-full bg-brown transform scale-0 group-hover:scale-100 transition-transform duration-200 -translate-x-4"></span>
               Contact
             </NavLink>
+            <FaInstagram/>
           </div>
 
           <div className="md:hidden">

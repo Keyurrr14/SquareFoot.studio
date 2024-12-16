@@ -103,17 +103,17 @@ const allLogos = [
 ];
 
 // Create batches of 15 logos
-for (let i = 0; i < allLogos.length; i += 13) {
-  LogoMarqueeBatches.push(allLogos.slice(i, i + 13));
+for (let i = 0; i < allLogos.length; i += 15) {
+  LogoMarqueeBatches.push(allLogos.slice(i, i + 15));
 }
 
 function LogoMarquee({ direction = 'horizontal', verticalDirection = 'up' }) {
   const isVertical = direction === 'vertical';
-  
+
   return (
     <div className="space-y-1">
       {LogoMarqueeBatches.map((batch, batchIndex) => (
-        <div 
+        <div
           key={batchIndex}
           className={`${isVertical ? 'flex-col h-full' : 'flex'} overflow-hidden relative`}
         >
@@ -121,13 +121,11 @@ function LogoMarquee({ direction = 'horizontal', verticalDirection = 'up' }) {
             <div
               key={i}
               className={`
-                ${isVertical 
-                  ? verticalDirection === 'up' 
-                    ? 'animate-marqueeVertical' 
+                ${isVertical
+                  ? verticalDirection === 'up'
+                    ? 'animate-marqueeVertical'
                     : 'animate-marqueeVerticalReverse'
-                  : batchIndex % 2 === 0 
-                    ? 'animate-marquee' 
-                    : 'animate-marqueeReverse'
+                  : 'animate-marquee'
                 } 
                 whitespace-nowrap flex
                 ${isVertical ? 'flex-col' : 'flex-row'}
@@ -137,8 +135,8 @@ function LogoMarquee({ direction = 'horizontal', verticalDirection = 'up' }) {
               {...(i === 1 ? { "aria-hidden": "true" } : {})}
             >
               {batch.map((logo, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className={`
                     flex items-center justify-center
                     ${isVertical ? 'py-14' : 'px-2 sm:px-4 md:px-6'}
@@ -149,8 +147,8 @@ function LogoMarquee({ direction = 'horizontal', verticalDirection = 'up' }) {
                     src={logo.src}
                     alt={logo.alt}
                     className={`object-contain flex-shrink-0 ${
-                      logo.alt === "Meta" 
-                        ? "h-20 sm:h-24 md:h-28 lg:h-32" 
+                      logo.alt === "Meta"
+                        ? "h-20 sm:h-24 md:h-28 lg:h-32"
                         : "h-16 w-36 sm:h-20 sm:w-44 md:h-24 md:w-52 lg:h-28 lg:w-60"
                     } ${isVertical ? 'rotate-90' : ''}`}
                   />

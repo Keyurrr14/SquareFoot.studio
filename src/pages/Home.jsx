@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import HeroImage from "../assets/images/HeroImage.webp";
-import WhyChooseUs from "../components/WhyChooseUs";
 import CountUp from "react-countup";
+import HeroImage from "../assets/images/HeroImage.webp";
+import LogoMarquee from "../components/LogoMarquee"
 
 export default function Home() {
   const [scale, setScale] = useState(1);
@@ -65,22 +65,14 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="font-marbley text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
               >
-                Architecture & Interior Design Studio
-              </motion.h1>
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="font-marbley text-white text-md sm:text-lg md:text-xl lg:text-2xl mt-4"
-              >
-                Designing Dreams, Building Realities.
+                Crafting spaces that define your Legacy
               </motion.h1>
               <motion.ul className="list-disc font-marbley text-white text-lg sm:text-xl md:text-2xl lg:text-3xl mt-6 sm:mt-10 space-y-2">
                 {[
                   "Architecture and Design Consultancy.",
                   "Interior Design and Build.",
-                  "3D Visualization and Walkthrough.",
-                  "Feasibility Studies.",
+                  "3D Visualization and Walkthrough Animation.",
+                  "Project Feasibility Studies.",
                   "Vastu Consultancy.",
                 ].map((item, index) => (
                   <motion.li
@@ -103,7 +95,7 @@ export default function Home() {
                 className="bg-white/10 backdrop-blur-sm p-6 sm:p-8 rounded-lg w-full max-w-md border border-light-black/30"
               >
                 <h2 className="font-marbley text-white text-3xl sm:text-4xl lg:text-5xl mb-6 sm:mb-8 text-center">
-                  Get in Touch
+                  Talk to our Consultant
                 </h2>
 
                 <div className="mb-4 sm:mb-6">
@@ -113,15 +105,6 @@ export default function Home() {
                     placeholder="Name"
                   />
                 </div>
-
-                <div className="mb-4 sm:mb-6">
-                  <input
-                    type="email"
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border-b-2 border-light-black/30 font-manrope text-light-black placeholder-light-black/70 focus:outline-none focus:border-light-black transition-colors"
-                    placeholder="Email"
-                  />
-                </div>
-
                 <div className="mb-6 sm:mb-8">
                   <input
                     type="tel"
@@ -130,8 +113,16 @@ export default function Home() {
                   />
                 </div>
 
+                <div className="mb-4 sm:mb-6">
+                  <input
+                    type="email"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border-b-2 border-light-black/30 font-manrope text-light-black placeholder-light-black/70 focus:outline-none focus:border-light-black transition-colors"
+                    placeholder="Email (Optional)"
+                  />
+                </div>
+
                 <button className="w-full bg-transparent border border-white text-white font-manrope font-bold py-2 sm:py-3 rounded-lg hover:bg-white hover:text-black transition-all duration-300">
-                  Book Free Consultation
+                  Submit
                 </button>
               </motion.form>
             </div>
@@ -160,8 +151,8 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="w-40 h-24 rounded-lg flex items-center justify-center"
                 >
-                  <h1 className="font-marbley text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-                    <CountUp end={2800} duration={2} suffix="+" />
+                  <h1 className="font-marbley text-black flex items-center justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl border border-light-black/30 rounded-lg p-2">
+                    <CountUp end={500000} duration={3} suffix=" Sq.Ft. +" />
                   </h1>
                 </motion.div>
               </div>
@@ -186,8 +177,8 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="w-40 h-24 bg-white rounded-lg flex items-center justify-center"
                 >
-                  <h1 className="font-marbley text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-                    <CountUp end={150} duration={2} suffix="+" />
+                  <h1 className="font-marbley text-black flex items-center justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl border border-light-black/30 rounded-lg p-2">
+                    <CountUp end={1500000} duration={3} suffix=" Sq.Ft. +" />
                   </h1>
                 </motion.div>
               </div>
@@ -212,8 +203,8 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="w-40 h-24 bg-white rounded-lg flex items-center justify-center"
                 >
-                  <h1 className="font-marbley text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-                    <CountUp end={50000} duration={2} suffix="+" />
+                  <h1 className="font-marbley text-black flex items-center justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl border border-light-black/30 rounded-lg p-2">
+                    <CountUp end={2800} duration={3} suffix=" +" />
                   </h1>
                 </motion.div>
               </div>
@@ -252,7 +243,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row">
+        <div className="flex flex-col lg:flex-row -my-20">
           <div className="w-full lg:w-1/2 min-h-screen flex flex-col justify-center px-4 sm:px-6 lg:px-20 py-12 lg:py-0">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -363,6 +354,15 @@ export default function Home() {
             </motion.ul>
           </div>
           <div className="w-full lg:w-1/2 p-4 lg:p-8 my-12 lg:px-20">
+          <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="font-marbley text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 mt-20"
+            >
+              Why Choose Us !
+            </motion.h1>
             <div className="grid grid-cols-2 gap-4 lg:gap-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -463,6 +463,8 @@ export default function Home() {
           </div>
         </div>
 
+        {/* <LogoMarquee/> */}
+
         {/*<div className="my-8">
           <h1 className="font-marbley text-black relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter text-center my-4 sm:my-8 md:my-12">
             Noted Clients
@@ -470,7 +472,7 @@ export default function Home() {
           <LogoMarquee />
         </div>*/}
 
-        <div className="px-4 sm:px-6 md:px-8">
+        {/* <div className="px-4 sm:px-6 md:px-8">
           <h1
             id="about"
             className="font-marbley text-black relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter text-center mt-8 sm:mt-12 md:mt-16"
@@ -498,9 +500,9 @@ export default function Home() {
             functionality, and timeless appeal. Your journey to exceptional
             spaces begins here.
           </p>
-        </div>
+        </div> */}
 
-        <div className="mt-20">
+        {/* <div className="mt-20">
           <h1 className="font-marbley text-black relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter text-center mt-8 sm:mt-12 md:mt-16 px-4">
             Let our numbers do the talking!
           </h1>
@@ -568,9 +570,9 @@ export default function Home() {
               </p>
             </motion.div>
           </div>
-        </div>
+        </div> */}
 
-        <WhyChooseUs />
+        {/* <WhyChooseUs /> */}
 
         <div className="mt-10"></div>
 
