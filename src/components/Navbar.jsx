@@ -1,8 +1,37 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useSmoothScroll } from "../context/SmoothScrollContext";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const { lenis } = useSmoothScroll();
+
+  const handleContactClick = async (e) => {
+    e.preventDefault();
+    setIsOpen(false);
+
+    if (window.location.pathname !== '/') {
+      await navigate('/');
+      setTimeout(() => {
+        const footer = document.querySelector('footer');
+        if (footer) {
+          lenis.scrollTo(footer, {
+            duration: 1.5,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          });
+        }
+      }, 300);
+    } else {
+      const footer = document.querySelector('footer');
+      if (footer) {
+        lenis.scrollTo(footer, {
+          duration: 1.5,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        });
+      }
+    }
+  };
 
   return (
     <nav className="sticky top-0 w-full z-20 bg-white">
@@ -34,13 +63,14 @@ function Navbar() {
               <span className="absolute left-0 w-1.5 h-1.5 rounded-full bg-brown transform scale-0 group-hover:scale-100 transition-transform duration-200 -translate-x-4"></span>
               Portfolio
             </NavLink>
-            <NavLink
-              to="/contact"
-              className="relative group flex items-center"
+            <a
+              href="#contact"
+              onClick={handleContactClick}
+              className="relative group flex items-center cursor-pointer"
             >
               <span className="absolute left-0 w-1.5 h-1.5 rounded-full bg-brown transform scale-0 group-hover:scale-100 transition-transform duration-200 -translate-x-4"></span>
               Contact
-            </NavLink>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -126,13 +156,13 @@ function Navbar() {
             >
               Portfolio
             </NavLink>
-            <NavLink
-              to="/contact"
+            <a
+              href="#contact"
+              onClick={handleContactClick}
               className="text-4xl font-marbley text-brown hover:text-gray-900 transition-transform duration-300 hover:scale-105"
-              onClick={() => setIsOpen(false)}
             >
               Contact
-            </NavLink>
+            </a>
           </div>
         </div>
       </div>

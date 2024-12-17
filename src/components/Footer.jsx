@@ -4,7 +4,7 @@ import { LiaLinkedin } from "react-icons/lia";
 
 export default function Footer() {
   return (
-    <div className="w-full h-auto min-h-[200px] bg-[#737057] p-4 sm:p-6 md:p-8 lg:p-10 flex flex-col items-start">
+    <footer id="contact" className="w-full h-auto min-h-[200px] bg-[#737057] p-4 sm:p-6 md:p-8 lg:p-10 flex flex-col items-start">
       {/* Left side */}
       <div className="w-full flex flex-col lg:flex-row px-4 sm:px-8 lg:px-12">
         <div className="w-full lg:w-1/2">
@@ -112,6 +112,6 @@ export default function Footer() {
           <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-beige transition-all duration-300 group-hover:w-full"></span>
         </h1>
       </div>
-    </div>
+    </footer>
   );
 }

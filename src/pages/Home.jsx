@@ -244,7 +244,7 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col lg:flex-row -my-20">
-          <div className="w-full lg:w-1/2 min-h-screen flex flex-col justify-center px-4 sm:px-6 lg:px-20 py-12 lg:py-0">
+          <div className="w-full lg:w-1/2 min-h-screen flex flex-col justify-center px-4 sm:px-6 lg:px-20 py-12 lg:py-0 mt-20 lg:mt-0">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -354,12 +354,12 @@ export default function Home() {
             </motion.ul>
           </div>
           <div className="w-full lg:w-1/2 p-4 lg:p-8 my-12 lg:px-20">
-          <motion.h1
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="font-marbley text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 mt-20"
+              className="font-marbley text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 mt-2 lg:mt-20"
             >
               Why Choose Us !
             </motion.h1>
