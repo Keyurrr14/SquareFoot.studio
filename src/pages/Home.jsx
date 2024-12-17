@@ -131,16 +131,16 @@ export default function Home() {
 
         <div className="flex flex-col lg:flex-row lg:my-20">
           {/* Left side - Stats */}
-          <div className="w-full lg:w-1/2 py-12 lg:py-0 flex flex-col items-center justify-center gap-10 px-4">
+          <div className="w-full lg:w-1/2 py-8 lg:py-0 flex flex-col items-center justify-center gap-6 sm:gap-10 px-4">
             {/* Completed Projects */}
             <div className="w-full flex items-center justify-center">
-              <div className="flex flex-row items-center justify-between gap-8 sm:gap-12">
+              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  className="font-marbley text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
+                  className="font-marbley text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center sm:text-left sm:w-[300px]"
                 >
                   Completed Projects
                 </motion.h1>
@@ -149,9 +149,9 @@ export default function Home() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="w-40 h-24 rounded-lg flex items-center justify-center"
+                  className="w-full sm:w-40 h-20 sm:h-24 rounded-lg flex items-center justify-center"
                 >
-                  <h1 className="font-marbley text-black flex items-center justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl border border-light-black/30 rounded-lg p-2">
+                  <h1 className="font-marbley text-black flex items-center justify-center text-lg sm:text-xl md:text-2xl lg:text-3xl border border-light-black/30 rounded-lg p-2 w-full sm:w-auto">
                     <CountUp end={500000} duration={3} suffix=" Sq.Ft. +" />
                   </h1>
                 </motion.div>
@@ -160,13 +160,13 @@ export default function Home() {
 
             {/* Ongoing Projects */}
             <div className="w-full flex items-center justify-center">
-              <div className="flex flex-row items-center justify-between gap-8 sm:gap-12">
+              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  className="font-marbley text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
+                  className="font-marbley text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center sm:text-left sm:w-[300px]"
                 >
                   Ongoing Projects
                 </motion.h1>
@@ -175,9 +175,9 @@ export default function Home() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="w-40 h-24 bg-white rounded-lg flex items-center justify-center"
+                  className="w-full sm:w-40 h-20 sm:h-24 bg-white rounded-lg flex items-center justify-center"
                 >
-                  <h1 className="font-marbley text-black flex items-center justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl border border-light-black/30 rounded-lg p-2">
+                  <h1 className="font-marbley text-black flex items-center justify-center text-lg sm:text-xl md:text-2xl lg:text-3xl border border-light-black/30 rounded-lg p-2 w-full sm:w-auto">
                     <CountUp end={1500000} duration={3} suffix=" Sq.Ft. +" />
                   </h1>
                 </motion.div>
@@ -186,13 +186,13 @@ export default function Home() {
 
             {/* Man Hours */}
             <div className="w-full flex items-center justify-center">
-              <div className="flex flex-row items-center justify-between gap-8 sm:gap-12">
+              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  className="font-marbley text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
+                  className="font-marbley text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center sm:text-left sm:w-[300px]"
                 >
                   Man Hours
                 </motion.h1>
@@ -201,9 +201,9 @@ export default function Home() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="w-40 h-24 bg-white rounded-lg flex items-center justify-center"
+                  className="w-full sm:w-40 h-20 sm:h-24 bg-white rounded-lg flex items-center justify-center"
                 >
-                  <h1 className="font-marbley text-black flex items-center justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl border border-light-black/30 rounded-lg p-2">
+                  <h1 className="font-marbley text-black flex items-center justify-center text-lg sm:text-xl md:text-2xl lg:text-3xl border border-light-black/30 rounded-lg p-2 w-full sm:w-auto">
                     <CountUp end={2800} duration={3} suffix=" +" />
                   </h1>
                 </motion.div>
