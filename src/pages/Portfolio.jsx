@@ -1,10 +1,15 @@
 import React from 'react'
+import Industrial from "../assets/images/Industrial.webp"
 
 function Portfolio() {
   return (
     <div className="flex justify-center items-center h-screen">
-        <h1 className="text-3xl font-bold">Portfolio Page</h1>
-      </div>
+      <img 
+        src={Industrial} 
+        alt="Industrial" 
+        className="h-80 object-contain"
+      />
+    </div>
   )
 }
 
