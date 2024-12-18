@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Tangerine:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
+
 
 @tailwind base;
 @tailwind components;
@@ -21,6 +24,34 @@
   @font-face {
     font-family: 'SouthamDemo';
     src: url('assets/fonts/SouthamDemo.otf') format('opentype');
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'NeutraDisplay';
+    src: url('assets/fonts/NeutraDisplay.otf') format('opentype');
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'NeutraContent';
+    src: url('assets/fonts/NeutraContent.otf') format('opentype');
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Cursive';
+    src: url('assets/fonts/ChristmasTwinkle.ttf') format('truetype');
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Hugh';
+    src: url('assets/fonts/Hugh.ttf') format('truetype');
     font-style: normal;
     font-display: swap;
   }

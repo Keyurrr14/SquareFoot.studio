@@ -3,6 +3,13 @@ import { useEffect, useState } from "react";
 import CountUp from "react-countup";
 import HeroImage from "../assets/images/HeroImage.webp";
 import LogoMarquee from "../components/LogoMarquee"
+import AD from "../assets/images/awards/AD.webp"
+import FOAID from "../assets/images/awards/FOAID.webp"
+import IIID from "../assets/images/awards/IIID.webp"
+import NDTV from "../assets/images/awards/NDTV.webp"
+import Sustainable from "../assets/images/awards/Sustainable.webp"
+import TOI from "../assets/images/awards/TOI.webp"
+
 
 export default function Home() {
   const [scale, setScale] = useState(1);
@@ -63,11 +70,11 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="font-marbley text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+                className="font-lavishly font-semibold text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-10"
               >
                 Crafting spaces that define your Legacy
               </motion.h1>
-              <motion.ul className="list-disc list-inside sm:list-outside font-marbley text-white text-lg sm:text-xl md:text-2xl lg:text-3xl mt-6 sm:mt-10 space-y-2">
+              <motion.ul className="list-disc list-inside sm:list-outside font-neutra text-white text-lg sm:text-xl md:text-2xl lg:text-3xl mt-6 sm:mt-10 space-y-2">
                 {[
                   "Architecture and Design Consultancy.",
                   "Interior Design and Build.",
@@ -94,21 +101,21 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.8 }}
                 className="bg-white/10 backdrop-blur-sm p-6 sm:p-8 rounded-lg w-full max-w-md border border-light-black/30"
               >
-                <h2 className="font-marbley text-white text-3xl sm:text-4xl lg:text-5xl mb-6 sm:mb-8 text-center">
+                <h2 className="font-neutra text-white text-3xl sm:text-4xl lg:text-5xl mb-6 sm:mb-8 text-center">
                   Talk to our Consultant
                 </h2>
 
                 <div className="mb-4 sm:mb-6">
                   <input
                     type="text"
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border-b-2 border-light-black/30 font-manrope text-light-black placeholder-light-black/70 focus:outline-none focus:border-light-black transition-colors"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border-b-2 border-light-black/30 font-NeutraContent text-light-black placeholder-light-black/70 focus:outline-none focus:border-light-black transition-colors"
                     placeholder="Name"
                   />
                 </div>
                 <div className="mb-6 sm:mb-8">
                   <input
                     type="tel"
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border-b-2 border-light-black/30 font-manrope text-light-black placeholder-light-black/70 focus:outline-none focus:border-light-black transition-colors"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border-b-2 border-light-black/30 font-NeutraContent text-light-black placeholder-light-black/70 focus:outline-none focus:border-light-black transition-colors"
                     placeholder="Phone Number"
                   />
                 </div>
@@ -116,12 +123,12 @@ export default function Home() {
                 <div className="mb-4 sm:mb-6">
                   <input
                     type="email"
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border-b-2 border-light-black/30 font-manrope text-light-black placeholder-light-black/70 focus:outline-none focus:border-light-black transition-colors"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border-b-2 border-light-black/30 font-NeutraContent text-light-black placeholder-light-black/70 focus:outline-none focus:border-light-black transition-colors"
                     placeholder="Email (Optional)"
                   />
                 </div>
 
-                <button className="w-full bg-transparent border border-white text-white font-manrope font-bold py-2 sm:py-3 rounded-lg hover:bg-white hover:text-black transition-all duration-300">
+                <button className="w-full bg-transparent text-xl border border-white text-white font-neutra font-bold py-2 sm:py-3 rounded-lg hover:bg-white hover:text-black transition-all duration-300">
                   Submit
                 </button>
               </motion.form>
@@ -140,7 +147,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  className="font-marbley text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center sm:text-left sm:w-[300px]"
+                  className="font-neutra text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center sm:text-left sm:w-[300px]"
                 >
                   Completed Projects
                 </motion.h1>
@@ -151,7 +158,7 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="w-full sm:w-40 h-20 sm:h-24 rounded-lg flex items-center justify-center"
                 >
-                  <h1 className="font-marbley text-black flex items-center justify-center text-lg sm:text-xl md:text-2xl lg:text-3xl border border-light-black/30 rounded-lg p-2 w-full sm:w-auto">
+                  <h1 className="font-neutra text-black flex items-center justify-center text-lg sm:text-xl md:text-2xl lg:text-3xl border border-light-black/30 rounded-lg p-2 w-full sm:w-auto">
                     <CountUp end={500000} duration={3} suffix=" Sq.Ft. +" />
                   </h1>
                 </motion.div>
@@ -166,7 +173,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  className="font-marbley text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center sm:text-left sm:w-[300px]"
+                  className="font-neutra text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center sm:text-left sm:w-[300px]"
                 >
                   Ongoing Projects
                 </motion.h1>
@@ -177,7 +184,7 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="w-full sm:w-40 h-20 sm:h-24 bg-white rounded-lg flex items-center justify-center"
                 >
-                  <h1 className="font-marbley text-black flex items-center justify-center text-lg sm:text-xl md:text-2xl lg:text-3xl border border-light-black/30 rounded-lg p-2 w-full sm:w-auto">
+                  <h1 className="font-neutra text-black flex items-center justify-center text-lg sm:text-xl md:text-2xl lg:text-3xl border border-light-black/30 rounded-lg p-2 w-full sm:w-auto">
                     <CountUp end={1500000} duration={3} suffix=" Sq.Ft. +" />
                   </h1>
                 </motion.div>
@@ -192,7 +199,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  className="font-marbley text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center sm:text-left sm:w-[300px]"
+                  className="font-neutra text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center sm:text-left sm:w-[300px]"
                 >
                   Man Hours
                 </motion.h1>
@@ -203,7 +210,7 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="w-full sm:w-40 h-20 sm:h-24 bg-white rounded-lg flex items-center justify-center"
                 >
-                  <h1 className="font-marbley text-black flex items-center justify-center text-lg sm:text-xl md:text-2xl lg:text-3xl border border-light-black/30 rounded-lg p-2 w-full sm:w-auto">
+                  <h1 className="font-neutra text-black flex items-center justify-center text-lg sm:text-xl md:text-2xl lg:text-3xl border border-light-black/30 rounded-lg px-8 py-5 w-full sm:w-auto">
                     <CountUp end={2800} duration={3} suffix=" +" />
                   </h1>
                 </motion.div>
@@ -218,7 +225,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="font-marbley text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+              className="font-neutra text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
             >
               Who are we?
             </motion.h1>
@@ -227,7 +234,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-manrope text-black text-sm sm:text-base md:text-lg leading-relaxed"
+              className="font-NeutraContent text-black text-lg sm:text-md md:text-2xl leading-relaxed"
             >
               We're more than designers – we're storytellers of spaces, crafting
               environments that reflect your dreams and aspirations. With
@@ -250,7 +257,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="font-marbley text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+              className="font-neutra text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
             >
               What we offer?
             </motion.h1>
@@ -259,13 +266,13 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-manrope text-black text-sm sm:text-base md:text-lg leading-relaxed"
+              className="font-NeutraContent text-black text-lg sm:text-md md:text-2xl leading-relaxed"
             >
               Our comprehensive services cater to diverse design and
               construction needs, ensuring a seamless experience from concept to
               completion:
             </motion.p>
-            <motion.ul className="mt-6 space-y-6 sm:space-y-4 font-manrope text-black text-sm sm:text-base md:text-lg leading-relaxed">
+            <motion.ul className="mt-6 space-y-6 sm:space-y-4 font-NeutraContent text-black text-lg sm:text-md md:text-2xl leading-relaxed">
               <motion.li
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -359,7 +366,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="font-marbley text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 mt-2 lg:mt-20"
+              className="font-neutra text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 mt-2 lg:mt-20"
             >
               Why Choose Us !
             </motion.h1>
@@ -371,7 +378,7 @@ export default function Home() {
                 transition={{ duration: 0.6 }}
                 className="text-center border border-light-black/30 p-3 sm:p-4 rounded-lg flex items-center justify-center transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg bg-white min-h-[120px]"
               >
-                <h1 className="font-marbley text-black text-sm sm:text-xl lg:text-2xl xl:text-3xl">
+                <h1 className="font-NeutraContent text-black text-sm sm:text-xl lg:text-2xl xl:text-3xl">
                   Designing Future with Excellence
                 </h1>
               </motion.div>
@@ -383,7 +390,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-center border border-light-black/30 p-3 sm:p-4 rounded-lg flex items-center justify-center transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg bg-white min-h-[120px]"
               >
-                <h1 className="font-marbley text-black text-sm sm:text-xl lg:text-2xl xl:text-3xl">
+                <h1 className="font-NeutraContent text-black text-sm sm:text-xl lg:text-2xl xl:text-3xl">
                   Client Centric Approach
                 </h1>
               </motion.div>
@@ -395,7 +402,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-center border border-light-black/30 p-3 sm:p-4 rounded-lg flex items-center justify-center transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg bg-white min-h-[120px]"
               >
-                <h1 className="font-marbley text-black text-sm sm:text-xl lg:text-2xl xl:text-3xl">
+                <h1 className="font-NeutraContent text-black text-sm sm:text-xl lg:text-2xl xl:text-3xl">
                   Sustainable, Innovative & Functional Desgins
                 </h1>
               </motion.div>
@@ -407,7 +414,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-center border border-light-black/30 p-3 sm:p-4 rounded-lg flex items-center justify-center transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg bg-white min-h-[120px]"
               >
-                <h1 className="font-marbley text-black text-sm sm:text-xl lg:text-2xl xl:text-3xl">
+                <h1 className="font-NeutraContent text-black text-sm sm:text-xl lg:text-2xl xl:text-3xl">
                   End to End Solutions, Turnkey Projects
                 </h1>
               </motion.div>
@@ -419,7 +426,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="text-center border border-light-black/30 p-3 sm:p-4 rounded-lg flex items-center justify-center transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg bg-white min-h-[120px]"
               >
-                <h1 className="font-marbley text-black text-sm sm:text-xl lg:text-2xl xl:text-3xl">
+                <h1 className="font-NeutraContent text-black text-sm sm:text-xl lg:text-2xl xl:text-3xl">
                   Expert Team of Professionals
                 </h1>
               </motion.div>
@@ -431,7 +438,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 className="text-center border border-light-black/30 p-3 sm:p-4 rounded-lg flex items-center justify-center transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg bg-white min-h-[120px]"
               >
-                <h1 className="font-marbley text-black text-sm sm:text-xl lg:text-2xl xl:text-3xl">
+                <h1 className="font-NeutraContent text-black text-sm sm:text-xl lg:text-2xl xl:text-3xl">
                   Focus on Long term Relations
                 </h1>
               </motion.div>
@@ -443,7 +450,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="text-center border border-light-black/30 p-3 sm:p-4 rounded-lg flex items-center justify-center transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg bg-white min-h-[120px]"
               >
-                <h1 className="font-marbley text-black text-sm sm:text-xl lg:text-2xl xl:text-3xl">
+                <h1 className="font-NeutraContent text-black text-sm sm:text-xl lg:text-2xl xl:text-3xl">
                   Commitment to Quality
                 </h1>
               </motion.div>
@@ -455,18 +462,28 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.7 }}
                 className="text-center border border-light-black/30 p-3 sm:p-4 rounded-lg flex items-center justify-center transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg bg-white min-h-[120px]"
               >
-                <h1 className="font-marbley text-black text-sm sm:text-xl lg:text-2xl xl:text-3xl">
+                <h1 className="font-NeutraContent text-black text-sm sm:text-xl lg:text-2xl xl:text-3xl">
                   Hassle Free Timely Assured Project Delivery
                 </h1>
               </motion.div>
             </div>
           </div>
         </div>
+        <h1 className="font-neutra text-6xl text-center my-8">Noted Clients</h1>
+        <LogoMarquee/>
+        <h1 className="font-neutra text-6xl text-center mt-8">Awards & Features</h1>
+        <div className="w-full flex flex-wrap items-center justify-center gap-16 mt-0">
+            <img src={AD} alt="" className="h-48" />
+            <img src={FOAID} alt="" className="h-48"/>
+            <img src={IIID} alt="" className="h-48"/>
+            <img src={NDTV} alt="" className="h-48"/>
+            <img src={Sustainable} alt="" className="h-48"/>
+            <img src={TOI} alt="" className="h-48"/>
+        </div>
 
-        {/* <LogoMarquee/> */}
 
         {/*<div className="my-8">
-          <h1 className="font-marbley text-black relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter text-center my-4 sm:my-8 md:my-12">
+          <h1 className="font-neutra text-black relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter text-center my-4 sm:my-8 md:my-12">
             Noted Clients
           </h1>
           <LogoMarquee />
@@ -475,11 +492,11 @@ export default function Home() {
         {/* <div className="px-4 sm:px-6 md:px-8">
           <h1
             id="about"
-            className="font-marbley text-black relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter text-center mt-8 sm:mt-12 md:mt-16"
+            className="font-neutra text-black relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter text-center mt-8 sm:mt-12 md:mt-16"
           >
             About Us
           </h1>
-          <p className="font-manrope font-normal text-black text-sm sm:text-base md:text-lg mt-4 sm:mt-6 w-[95%] sm:w-[85%] md:w-3/4 mx-auto text-justify sm:text-justify leading-relaxed px-2 sm:px-0">
+          <p className="font-neutra font-normal text-black text-sm sm:text-base md:text-lg mt-4 sm:mt-6 w-[95%] sm:w-[85%] md:w-3/4 mx-auto text-justify sm:text-justify leading-relaxed px-2 sm:px-0">
             Welcome to squarefoot.studio, a leading architecture and interior
             design firm where creativity meets functionality. We specialize in
             transforming ideas into stunning spaces that reflect your vision and
@@ -503,7 +520,7 @@ export default function Home() {
         </div> */}
 
         {/* <div className="mt-20">
-          <h1 className="font-marbley text-black relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter text-center mt-8 sm:mt-12 md:mt-16 px-4">
+          <h1 className="font-neutra text-black relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter text-center mt-8 sm:mt-12 md:mt-16 px-4">
             Let our numbers do the talking!
           </h1>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-12 sm:gap-8 md:gap-16 mt-14 mx-auto max-w-5xl px-4">
@@ -519,11 +536,11 @@ export default function Home() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="font-marbley text-black text-4xl sm:text-3xl md:text-4xl lg:text-5xl"
+                className="font-neutra text-black text-4xl sm:text-3xl md:text-4xl lg:text-5xl"
               >
                 <CountUp end={100} duration={2} suffix="+" />
               </motion.p>
-              <p className="font-manrope text-black mt-2 text-base sm:text-sm md:text-base">
+              <p className="font-neutra text-black mt-2 text-base sm:text-sm md:text-base">
                 Expert Team
               </p>
             </motion.div>
@@ -540,11 +557,11 @@ export default function Home() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="font-marbley text-black text-4xl sm:text-3xl md:text-4xl lg:text-5xl"
+                className="font-neutra text-black text-4xl sm:text-3xl md:text-4xl lg:text-5xl"
               >
                 <CountUp end={100000} duration={2} suffix="+" />
               </motion.p>
-              <p className="font-manrope text-black mt-2 text-base sm:text-sm md:text-base px-4">
+              <p className="font-neutra text-black mt-2 text-base sm:text-sm md:text-base px-4">
                 Residential Projects Delivered (sq.ft)
               </p>
             </motion.div>
@@ -561,11 +578,11 @@ export default function Home() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="font-marbley text-black text-4xl sm:text-3xl md:text-4xl lg:text-5xl"
+                className="font-neutra text-black text-4xl sm:text-3xl md:text-4xl lg:text-5xl"
               >
                 <CountUp end={1500000} duration={2} suffix="+" />
               </motion.p>
-              <p className="font-manrope text-black mt-2 text-base sm:text-sm md:text-base px-4">
+              <p className="font-neutra text-black mt-2 text-base sm:text-sm md:text-base px-4">
                 Commercial Projects Delivered (sq.ft)
               </p>
             </motion.div>
@@ -582,7 +599,7 @@ export default function Home() {
           <div className="flex flex-col items-start justify-start mt-6 md:mt-10">
             <motion.h1
               {...fadeInUp}
-              className="font-marbley text-black relative z-10 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-left tracking-tighter"
+              className="font-neutra text-black relative z-10 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-left tracking-tighter"
             >
               Square Foot Studio designs functional, stunning spaces for homes,
               offices, and commercial projects with innovation and precision.
@@ -605,7 +622,7 @@ export default function Home() {
               />
               <motion.p
                 {...fadeInUp}
-                className="font-manrope text-black text-sm sm:text-base md:text-lg mt-4 sm:mt-6 w-full sm:w-[85%] md:w-3/4 text-left leading-relaxed"
+                className="font-neutra text-black text-sm sm:text-base md:text-lg mt-4 sm:mt-6 w-full sm:w-[85%] md:w-3/4 text-left leading-relaxed"
               >
                 The Mumbai-based studio, founded by
                 <span className="italic font-bold"> Faisal Azam</span>, was
@@ -614,7 +631,7 @@ export default function Home() {
               </motion.p>
               <motion.p
                 {...fadeInUp}
-                className="font-manrope text-black text-sm sm:text-base md:text-lg mt-4 sm:mt-6 w-full sm:w-[85%] md:w-3/4 text-left leading-relaxed"
+                className="font-neutra text-black text-sm sm:text-base md:text-lg mt-4 sm:mt-6 w-full sm:w-[85%] md:w-3/4 text-left leading-relaxed"
               >
                 Whether you're looking to build your dream home, renovate your
                 office, or design a bespoke commercial space, our team of
@@ -642,7 +659,7 @@ export default function Home() {
 
         {/* <motion.h1
           {...fadeInUp}
-          className="font-marbley text-black relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter text-center mt-8 sm:mt-12 md:mt-16"
+          className="font-neutra text-black relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter text-center mt-8 sm:mt-12 md:mt-16"
         >
           Projects
         </motion.h1>

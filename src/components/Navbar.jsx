@@ -41,24 +41,24 @@ function Navbar() {
           <div className="flex-shrink-0">
             <NavLink
               to="/"
-              className="text-2xl font-mounties font-bold text-brown"
+              className="text-4xl font-neutra font-bold text-brown"
             >
-              SquareFoot.studio
+              squarefoot.studio
             </NavLink>
           </div>
 
           {/* Right: Links */}
-          <div className="hidden md:flex ml-auto space-x-16 font-manrope font-semibold text-brown">
+          <div className="hidden md:flex ml-auto space-x-16 font-NeutraContent font-bold text-brown">
             <NavLink
               to="/"
-              className="relative group flex items-center cursor-pointer"
+              className="relative group flex items-center cursor-pointer text-xl"
             >
               <span className="absolute left-0 w-1.5 h-1.5 rounded-full bg-brown transform scale-0 group-hover:scale-100 transition-transform duration-200 -translate-x-4"></span>
               Home
             </NavLink>
             <NavLink
               to="/portfolio"
-              className="relative group flex items-center"
+              className="relative group flex items-center cursor-pointer text-xl"
             >
               <span className="absolute left-0 w-1.5 h-1.5 rounded-full bg-brown transform scale-0 group-hover:scale-100 transition-transform duration-200 -translate-x-4"></span>
               Portfolio
@@ -66,7 +66,7 @@ function Navbar() {
             <a
               href="#contact"
               onClick={handleContactClick}
-              className="relative group flex items-center cursor-pointer"
+              className="relative group flex items-center cursor-pointer text-xl"
             >
               <span className="absolute left-0 w-1.5 h-1.5 rounded-full bg-brown transform scale-0 group-hover:scale-100 transition-transform duration-200 -translate-x-4"></span>
               Contact
@@ -111,10 +111,10 @@ function Navbar() {
           <div className="flex items-center h-16 px-4">
             <NavLink
               to="/"
-              className="text-2xl font-mounties font-bold text-brown flex-shrink-0"
+              className="text-4xl font-neutra font-bold text-brown flex-shrink-0"
               onClick={() => setIsOpen(false)}
             >
-              SquareFoot.studio
+              squarefoot.studio
             </NavLink>
             <button
               onClick={() => setIsOpen(false)}
@@ -144,14 +144,14 @@ function Navbar() {
           >
             <NavLink
               to="/"
-              className="text-4xl font-marbley text-brown hover:text-gray-900 transition-transform duration-300 hover:scale-105"
+              className="text-4xl font-NeutraContent text-brown hover:text-gray-900 transition-transform duration-300 hover:scale-105"
               onClick={() => setIsOpen(false)}
             >
               Home
             </NavLink>
             <NavLink
               to="/portfolio"
-              className="text-4xl font-marbley text-brown hover:text-gray-900 transition-transform duration-300 hover:scale-105"
+              className="text-4xl font-NeutraContent text-brown hover:text-gray-900 transition-transform duration-300 hover:scale-105"
               onClick={() => setIsOpen(false)}
             >
               Portfolio
@@ -159,7 +159,7 @@ function Navbar() {
             <a
               href="#contact"
               onClick={handleContactClick}
-              className="text-4xl font-marbley text-brown hover:text-gray-900 transition-transform duration-300 hover:scale-105"
+              className="text-4xl font-NeutraContent text-brown hover:text-gray-900 transition-transform duration-300 hover:scale-105"
             >
               Contact
             </a>

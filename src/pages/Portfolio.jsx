@@ -69,7 +69,7 @@ function Portfolio() {
                   : 'opacity-0 scale-110'
                 }`}
             >
-              <div className="flex justify-center gap-2 sm:gap-4 md:gap-6 lg:gap-8 z-10 px-2 sm:px-4 w-full mb-4">
+              <div className="flex justify-center gap-2 sm:gap-4 md:gap-6 lg:gap-8 z-10 px-2 sm:px-4 w-full mb-4 cursor-pointer">
                 {['Industrial', 'Commercial', 'Architecture'].map((category) => (
                   <span
                     key={category}
@@ -112,7 +112,7 @@ function Portfolio() {
         </div>
 
       </div>
-      {/* <LogoMarquee/> */}
+      <LogoMarquee/>
     </>
   )
 }

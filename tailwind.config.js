@@ -8,6 +8,12 @@ module.exports = {
         manrope: ["Manrope"],
         marbley: ["MarbleyRegular"],
         southam: ["SouthamDemo"],
+        neutra : ["NeutraDisplay"],
+        cursive : ["ChristmasTwinkle"],
+        hugh : ["Hugh"],
+        tangerine : ["Tangerine"],
+        lavishly : ["Lavishly Yours"],
+        NeutraContent : ["NeutraContent"]
       },
       animation: {
         marquee: "marquee 25s linear infinite",
