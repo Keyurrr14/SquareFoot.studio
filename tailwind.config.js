@@ -48,6 +48,9 @@ module.exports = {
         brown: "#83735B",
         "light-brown": "#A9977D",
       },
+      height: {
+        '18': '4.5rem',
+      }
     },
   },
   plugins: [],

@@ -5,6 +5,7 @@ import Commercial from "../assets/images/Commercial.webp"
 import Commercial2 from "../assets/images/Commercial2.webp"
 import Architechture from "../assets/images/Architechture.webp"
 import Architechture2 from "../assets/images/Architechture2.webp"
+import LogoMarquee from "../components/LogoMarquee"
 
 function Portfolio() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -50,13 +51,29 @@ function Portfolio() {
         setCurrentSlide((prev) => (prev + 1) % slides.length)
         setIsTransitioning(false)
       }, 500)
-    }, 3000) // Increased to 5 seconds for better viewing
+    }, 3000)
 
     return () => clearInterval(timer)
   }, [])
 
   return (
-    <div className="flex justify-center items-center min-h-screen relative overflow-hidden lg:-mt-20 md:mt-0 sm:mt-0 bg-white">
+    <>
+    <div className="flex justify-center items-center min-h-[80vh] lg:min-h-[90vh] relative overflow-hidden lg:-mt-20 md:mt-0 sm:mt-0 bg-white">
+      <div className="absolute top-40 sm:top-5 md:top-24 lg:top-36 left-1/2 transform -translate-x-1/2 flex justify-center gap-1 sm:gap-4 md:gap-6 lg:gap-8 z-10 px-4 w-full sm:w-auto">
+        {['Industrial', 'Commercial', 'Architecture'].map((category) => (
+          <span
+            key={category}
+            className={`font-marbley text-md sm:text-base md:text-lg lg:text-2xl transition-all px-2 sm:px-3 md:px-4 py-1 sm:py-2 rounded ${
+              slides[currentSlide].title.includes(category)
+                ? 'text-brown border-b-2 border-brown'
+                : 'text-brown'
+            }`}
+          >
+            {category}
+          </span>
+        ))}
+      </div>
+
       {slides.map((slide, index) => (
         <div 
           key={index}
@@ -69,13 +86,13 @@ function Portfolio() {
           <img 
             src={slide.image} 
             alt={slide.title} 
-            className="h-auto max-h-96 w-full object-contain md:h-96 sm:h-72"
+            className="h-auto max-h-96 w-full object-contain md:h-96 sm:h-64"
           />
         </div>
       ))}
       
       <div 
-        className={`absolute bottom-8 left-4 md:left-12 lg:left-36 text-brown transition-opacity duration-500 ${
+        className={`absolute bottom-8 left-4 md:left-12 lg:left-80 text-brown transition-opacity duration-500 ${
           isTransitioning ? 'opacity-0' : 'opacity-100'
         }`}
       >
@@ -96,7 +113,10 @@ function Portfolio() {
           />
         ))}
       </div>
+
     </div>
+    <LogoMarquee/>
+    </>
   )
 }
 
