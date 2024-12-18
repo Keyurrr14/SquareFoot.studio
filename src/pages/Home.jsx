@@ -58,7 +58,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-black opacity-70" />
 
           <div className="relative z-10 flex flex-col lg:flex-row w-full h-full p-4">
-            <div className="w-full lg:w-1/2 flex flex-col justify-center px-4 lg:px-8 mb-8 lg:mb-0">
+            <div className="w-full lg:w-1/2 flex flex-col justify-center px-4 sm:px-6 lg:px-8 mb-8 lg:mb-0 lg:ml-14">
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -67,7 +67,7 @@ export default function Home() {
               >
                 Crafting spaces that define your Legacy
               </motion.h1>
-              <motion.ul className="list-disc font-marbley text-white text-lg sm:text-xl md:text-2xl lg:text-3xl mt-6 sm:mt-10 space-y-2">
+              <motion.ul className="list-disc list-inside sm:list-outside font-marbley text-white text-lg sm:text-xl md:text-2xl lg:text-3xl mt-6 sm:mt-10 space-y-2">
                 {[
                   "Architecture and Design Consultancy.",
                   "Interior Design and Build.",

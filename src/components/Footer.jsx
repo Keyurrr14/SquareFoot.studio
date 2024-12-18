@@ -4,10 +4,10 @@ import { LiaLinkedin } from "react-icons/lia";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="w-full h-auto min-h-[200px] bg-[#737057] p-4 sm:p-6 md:p-8 lg:p-10 flex flex-col items-start">
+    <footer id="contact" className="w-full h-auto min-h-[200px] bg-[#737057] p-4 sm:p-6 md:p-8 lg:p-10 flex flex-col items-center">
       {/* Left side */}
       <div className="w-full flex flex-col lg:flex-row px-4 sm:px-8 lg:px-12">
-        <div className="w-full lg:w-1/2">
+        <div className="w-full lg:w-1/2 lg:ml-14">
           <span className="font-marbley text-beige text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl tracking-tighter break-words relative group cursor-pointer">
             Contact Us
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-beige transition-all duration-300 group-hover:w-full"></span>
@@ -49,7 +49,7 @@ export default function Footer() {
         </div>
 
         {/* Right side - Contact Form */}
-        <div className="w-full lg:w-1/2 flex items-center justify-center mt-8 lg:mt-14 px-0 sm:px-4">
+        <div className="w-full lg:w-1/2 flex items-center justify-center mt-8 lg:mt-0 px-0 sm:px-4">
           <form className="bg-white/10 backdrop-blur-sm p-4 sm:p-6 rounded-lg w-full max-w-md border border-beige/30">
             <h2 className="font-marbley text-beige text-2xl sm:text-3xl lg:text-4xl mb-6 text-center">
               Talk to our Consultant
@@ -88,13 +88,13 @@ export default function Footer() {
 
       {/* Bottom credits */}
       <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0 mt-8 px-4 sm:px-8 lg:px-12">
-        <div className="flex items-center justify-center gap-5 text-2xl sm:text-3xl text-beige cursor-pointer">
+        <div className="flex items-center justify-center gap-5 text-2xl sm:text-3xl text-beige cursor-pointer lg:ml-14">
           <FaInstagram className="hover:scale-110 transition-transform"/>
           <LiaLinkedin className="hover:scale-110 transition-transform"/>
           <BsWhatsapp className="hover:scale-110 transition-transform"/>
         </div>
         <h1
-          className="font-marbley text-beige text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl tracking-tighter cursor-pointer relative group"
+          className="font-marbley text-beige text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl tracking-tighter cursor-pointer relative group lg:mr-24"
           onClick={() => {
             const scrollToTop = () => {
               const currentPosition = window.scrollY;
