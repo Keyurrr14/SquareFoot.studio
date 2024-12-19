@@ -469,16 +469,32 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <h1 className="font-neutra text-6xl text-center my-8">Noted Clients</h1>
-        <LogoMarquee/>
-        <h1 className="font-neutra text-6xl text-center mt-8">Awards & Features</h1>
-        <div className="w-full flex flex-wrap items-center justify-center gap-16 mt-0">
-            <img src={AD} alt="" className="h-48" />
-            <img src={FOAID} alt="" className="h-48"/>
-            <img src={IIID} alt="" className="h-48"/>
-            <img src={NDTV} alt="" className="h-48"/>
-            <img src={Sustainable} alt="" className="h-48"/>
-            <img src={TOI} alt="" className="h-48"/>
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="font-neutra text-black text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+        >
+          Noted Clients
+        </motion.h1>
+        <LogoMarquee />
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="font-neutra text-black text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-14"
+        >
+          Awards & Features
+        </motion.h1>
+        <div className="w-full flex flex-wrap items-center justify-center gap-8 sm:gap-12 md:gap-16 mt-0 px-4">
+          <img src={AD} alt="" className="h-32 sm:h-32 md:h-40 lg:h-48" />
+          <img src={FOAID} alt="" className="h-32 sm:h-32 md:h-40 lg:h-48" />
+          <img src={IIID} alt="" className="h-32 sm:h-32 md:h-40 lg:h-48" />
+          <img src={NDTV} alt="" className="h-32 sm:h-32 md:h-40 lg:h-48" />
+          <img src={Sustainable} alt="" className="h-32 sm:h-32 md:h-40 lg:h-48" />
+          <img src={TOI} alt="" className="h-32 sm:h-32 md:h-40 lg:h-48" />
         </div>
 
 
