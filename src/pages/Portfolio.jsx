@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Architechture from "../assets/images/Architechture.webp";
 import Architechture2 from "../assets/images/Architechture2.webp";
 import Commercial from "../assets/images/Commercial.webp";
@@ -9,6 +9,85 @@ import Industrial2 from "../assets/images/Industrial2.webp";
 import PortfolioItem from "../components/PortfolioItem";
 
 function Portfolio() {
+  const imageClass = "snap-center w-1/3 flex-shrink-0";
+  const [activeIndex, setActiveIndex] = useState(1);
+  const carouselRef = useRef(null);
+
+  const content = [
+    {
+      image: Architechture,
+      alt: "Architecture",
+      title: "Architecture",
+      subtitle: "Oberoi Sky City",
+    },
+    {
+      image: Architechture2,
+      alt: "Architecture",
+      title: "Architecture",
+      subtitle: "Oberoi Sky City",
+    },
+    {
+      image: Commercial,
+      alt: "Commercial",
+      title: "Commercial",
+      subtitle: "Oberoi Sky City",
+    },
+    {
+      image: Commercial2,
+      alt: "Commercial",
+      title: "Commercial",
+      subtitle: "Oberoi Sky City",
+    },
+    {
+      image: Industrial,
+      alt: "Industrial",
+      title: "Industrial",
+      subtitle: "Oberoi Sky City",
+    },
+    {
+      image: Industrial2,
+      alt: "Industrial",
+      title: "Industrial",
+      subtitle: "Oberoi Sky City",
+    },
+  ];
+
+  const seamlessContent = [
+    ...content,
+    ...content,
+    ...content,
+    ...content,
+    ...content,
+  ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (carouselRef.current) {
+        const carousel = carouselRef.current;
+        const centerPosition = carousel.scrollLeft + carousel.offsetWidth / 2;
+        const childElements = Array.from(carousel.children);
+        let closestIndex = 0;
+        let closestDistance = Infinity;
+
+        childElements.forEach((child, index) => {
+          const elementCenter = child.offsetLeft + child.offsetWidth / 2;
+          const distance = Math.abs(centerPosition - elementCenter);
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestIndex = index;
+          }
+        });
+
+        setActiveIndex(closestIndex);
+      }
+    };
+
+    const carousel = carouselRef.current;
+    carousel.addEventListener("scroll", handleScroll);
+
+    return () => carousel.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       <motion.div
@@ -28,107 +107,26 @@ function Portfolio() {
         </h1>
       </motion.div>
       <div className="container mx-auto px-4 py-8">
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-7xl mx-auto"
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: {
-              opacity: 0,
-              y: 20,
-            },
-            visible: {
-              opacity: 1,
-              y: 0,
-              transition: {
-                delay: 1,
-                staggerChildren: 1,
-                duration: 0.5,
-                ease: "easeInOut",
-              },
-            },
-          }}
+        <div
+          ref={carouselRef}
+          className="snap-x snap-mandatory overflow-x-scroll max-w-full gap-12 flex mx-auto no-scrollbar"
         >
-          {/* Row 1 */}
-          <PortfolioItem
-            src={Industrial}
-            alt="Industrial"
-            title="Interior"
-            subtitle="Oberoi Sky City"
-          />
-          <PortfolioItem
-            src={Commercial}
-            alt="Commercial"
-            title="Interior"
-            subtitle="Oberoi Sky City"
-          />
-          <PortfolioItem
-            src={Architechture}
-            alt="Architecture"
-            title="Interior"
-            subtitle="Oberoi Sky City"
-          />
-
-          {/* Row 2 */}
-          <PortfolioItem
-            src={Industrial2}
-            alt="Industrial 2"
-            title="Architecture"
-            subtitle="Oberoi Sky City"
-          />
-          <PortfolioItem
-            src={Commercial2}
-            alt="Commercial 2"
-            title="Interior"
-            subtitle="Oberoi Sky City"
-          />
-          <PortfolioItem
-            src={Architechture2}
-            alt="Architecture 2"
-            title="Interior"
-            subtitle="Oberoi Sky City"
-          />
-
-          {/* Row 3 */}
-          <PortfolioItem
-            src={Industrial}
-            alt="Industrial"
-            title="Architecture"
-            subtitle="Oberoi Sky City"
-          />
-          <PortfolioItem
-            src={Commercial}
-            alt="Commercial"
-            title="Interior"
-            subtitle="Oberoi Sky City"
-          />
-          <PortfolioItem
-            src={Architechture}
-            alt="Architecture"
-            title="Interior"
-            subtitle="Oberoi Sky City"
-          />
-
-          {/* Row 4 */}
-          <PortfolioItem
-            src={Industrial2}
-            alt="Industrial 2"
-            title="Interior"
-            subtitle="Oberoi Sky City"
-          />
-          <PortfolioItem
-            src={Commercial2}
-            alt="Commercial 2"
-            title="Interior"
-            subtitle="Oberoi Sky City"
-          />
-          <PortfolioItem
-            src={Architechture2}
-            alt="Architecture 2"
-            title="Architecture"
-            subtitle="Oberoi Sky City"
-          />
-        </motion.div>
+          {seamlessContent.map((data, index) => (
+            <div
+              className={`
+              ${index === activeIndex ? "opacity-100" : "opacity-40"}
+              transition-all duration-300 ease-linear ${imageClass}`}
+              key={index}
+            >
+              <PortfolioItem
+                src={data.image}
+                alt={data.alt}
+                title={data.title}
+                subtitle={data.subtitle}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );

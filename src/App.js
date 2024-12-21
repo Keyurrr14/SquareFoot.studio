@@ -8,7 +8,7 @@ import Portfolio from "./pages/Portfolio";
 export default function App() {
   return (
     <Router>
-      <AnimatedCursor
+      {/* <AnimatedCursor
         innerSize={8}
         outerSize={35}
         innerScale={1}
@@ -21,7 +21,7 @@ export default function App() {
         outerStyle={{
           backgroundColor: "black",
         }}
-      />
+      /> */}
       <SmoothScrollProvider>
         <Routes>
           <Route element={<RootLayout />}>
