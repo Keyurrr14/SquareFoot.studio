@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 import Architechture from "../assets/images/Architechture.webp";
 import Architechture2 from "../assets/images/Architechture2.webp";
@@ -10,7 +11,12 @@ import PortfolioItem from "../components/PortfolioItem";
 function Portfolio() {
   return (
     <>
-      <div className="flex justify-center items-center gap-4 sm:gap-8 md:gap-12 lg:gap-16 mt-6 sm:mt-8 md:mt-10">
+      <motion.div
+        className="flex justify-center items-center gap-4 sm:gap-8 md:gap-12 lg:gap-16 mt-6 sm:mt-8 md:mt-10"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+      >
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-neutra text-brown">
           Interior
         </h1>
@@ -20,9 +26,29 @@ function Portfolio() {
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-neutra text-brown">
           Architecture
         </h1>
-      </div>
+      </motion.div>
       <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-7xl mx-auto">
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-7xl mx-auto"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {
+              opacity: 0,
+              y: 20,
+            },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                delay: 1,
+                staggerChildren: 1,
+                duration: 0.5,
+                ease: "easeInOut",
+              },
+            },
+          }}
+        >
           {/* Row 1 */}
           <PortfolioItem
             src={Industrial}
@@ -102,7 +128,7 @@ function Portfolio() {
             title="Architecture"
             subtitle="Oberoi Sky City"
           />
-        </div>
+        </motion.div>
       </div>
     </>
   );

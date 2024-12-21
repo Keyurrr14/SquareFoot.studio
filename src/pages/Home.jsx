@@ -474,7 +474,7 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="font-neutra text-black text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+          className="font-neutra text-black text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl my-6"
         >
           Noted Clients
         </motion.h1>
