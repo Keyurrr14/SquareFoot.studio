@@ -13,7 +13,9 @@ module.exports = {
         hugh : ["Hugh"],
         tangerine : ["Tangerine"],
         lavishly : ["Lavishly Yours"],
-        NeutraContent : ["NeutraContent"]
+        NeutraContent : ["NeutraContent"],
+        explora : ["Explora"],
+        marckScript : ["Marck Script"]
       },
       animation: {
         marquee: "marquee 25s linear infinite",
@@ -51,8 +53,8 @@ module.exports = {
       },
       colors: {
         beige: "#F3F2EB",
-        brown: "#83735B",
-        "light-brown": "#A9977D",
+        brown: "#F3F2EB",
+        "light-brown": "#50c878",
       },
       height: {
         '18': '4.5rem',

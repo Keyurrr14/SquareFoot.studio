@@ -9,7 +9,7 @@ import Industrial2 from "../assets/images/Industrial2.webp";
 import PortfolioItem from "../components/PortfolioItem";
 
 function Portfolio() {
-  const imageClass = "snap-center w-1/3 flex-shrink-0";
+  const imageClass = "snap-center w-full sm:w-1/3 flex-shrink-0";
   const [activeIndex, setActiveIndex] = useState(1);
   const carouselRef = useRef(null);
 
@@ -58,6 +58,7 @@ function Portfolio() {
     ...content,
     ...content,
     ...content,
+    ...content,
   ];
 
   useEffect(() => {
@@ -96,13 +97,13 @@ function Portfolio() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
       >
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-neutra text-brown">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-neutra text-black">
           Interior
         </h1>
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-neutra text-brown">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-neutra text-black">
           &
         </h1>
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-neutra text-brown">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-neutra text-black">
           Architecture
         </h1>
       </motion.div>
@@ -114,8 +115,8 @@ function Portfolio() {
           {seamlessContent.map((data, index) => (
             <div
               className={`
-              ${index === activeIndex ? "opacity-100" : "opacity-40"}
-              transition-all duration-300 ease-linear ${imageClass}`}
+              ${index === activeIndex ? "opacity-100" : "opacity-20"}
+              transition-all duration-400 ease-linear ${imageClass}`}
               key={index}
             >
               <PortfolioItem

@@ -41,41 +41,34 @@ function Navbar() {
           <div className="flex-shrink-0">
             <NavLink
               to="/"
-              className="text-4xl font-neutra font-bold text-brown"
+              className="text-4xl font-neutra font-bold text-black"
             >
               squarefoot.studio
             </NavLink>
           </div>
 
           {/* Right: Links */}
-          <div className="hidden md:flex ml-auto space-x-16 font-NeutraContent font-bold text-brown">
+          <div className="hidden md:flex ml-auto space-x-16 font-NeutraContent font-bold text-black">
             <NavLink
               to="/"
               className="relative group flex items-center cursor-pointer text-xl"
             >
-              <span className="absolute left-0 w-1.5 h-1.5 rounded-full bg-brown transform scale-0 group-hover:scale-100 transition-transform duration-200 -translate-x-4"></span>
+              <span className="absolute left-0 w-1.5 h-1.5 rounded-full bg-black transform scale-0 group-hover:scale-100 transition-transform duration-200 -translate-x-4"></span>
               Home
-            </NavLink>
-            <NavLink
-              to="/portfolio"
-              className="relative group flex items-center cursor-pointer text-xl"
-            >
-              <span className="absolute left-0 w-1.5 h-1.5 rounded-full bg-brown transform scale-0 group-hover:scale-100 transition-transform duration-200 -translate-x-4"></span>
-              Portfolio
             </NavLink>
             <a
               href="#contact"
               onClick={handleContactClick}
               className="relative group flex items-center cursor-pointer text-xl"
             >
-              <span className="absolute left-0 w-1.5 h-1.5 rounded-full bg-brown transform scale-0 group-hover:scale-100 transition-transform duration-200 -translate-x-4"></span>
+              <span className="absolute left-0 w-1.5 h-1.5 rounded-full bg-black transform scale-0 group-hover:scale-100 transition-transform duration-200 -translate-x-4"></span>
               Contact
             </a>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-brown">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-black">
               <svg
                 className="h-6 w-6"
                 fill="none"
@@ -111,14 +104,14 @@ function Navbar() {
           <div className="flex items-center h-16 px-4">
             <NavLink
               to="/"
-              className="text-4xl font-neutra font-bold text-brown flex-shrink-0"
+              className="text-4xl font-neutra font-bold text-black flex-shrink-0"
               onClick={() => setIsOpen(false)}
             >
               squarefoot.studio
             </NavLink>
             <button
               onClick={() => setIsOpen(false)}
-              className="ml-auto text-brown"
+              className="ml-auto text-black"
             >
               <svg
                 className="h-6 w-6"
@@ -144,22 +137,15 @@ function Navbar() {
           >
             <NavLink
               to="/"
-              className="text-4xl font-NeutraContent text-brown hover:text-gray-900 transition-transform duration-300 hover:scale-105"
+              className="text-4xl font-NeutraContent text-black hover:text-gray-900 transition-transform duration-300 hover:scale-105"
               onClick={() => setIsOpen(false)}
             >
               Home
             </NavLink>
-            <NavLink
-              to="/portfolio"
-              className="text-4xl font-NeutraContent text-brown hover:text-gray-900 transition-transform duration-300 hover:scale-105"
-              onClick={() => setIsOpen(false)}
-            >
-              Portfolio
-            </NavLink>
             <a
               href="#contact"
               onClick={handleContactClick}
-              className="text-4xl font-NeutraContent text-brown hover:text-gray-900 transition-transform duration-300 hover:scale-105"
+              className="text-4xl font-NeutraContent text-black hover:text-gray-900 transition-transform duration-300 hover:scale-105"
             >
               Contact
             </a>

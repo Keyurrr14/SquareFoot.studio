@@ -1,13 +1,23 @@
+import { useState } from "react";
 import { BsWhatsapp } from "react-icons/bs";
 import { FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
+  const [data, setData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+  });
+
   return (
-    <footer id="contact" className="w-full h-auto min-h-[200px] bg-[#737057] p-4 sm:p-6 md:p-8 lg:p-10 flex flex-col items-center">
+    <footer
+      id="contact"
+      className="w-full h-auto min-h-[200px] bg-zinc-900 p-4 sm:p-6 md:p-8 lg:p-10 flex flex-col items-center"
+    >
       {/* Left side */}
       <div className="w-full flex flex-col lg:flex-row px-4 sm:px-8 lg:px-12">
         <div className="w-full lg:w-1/2 lg:ml-14">
-          <span className="font-neutra text-beige text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl tracking-tighter break-words relative group cursor-pointer">
+          <span className="font-marckScript text-beige text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl tracking-tighter break-words relative group cursor-pointer">
             Contact Us
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-beige transition-all duration-300 group-hover:w-full"></span>
           </span>
@@ -23,7 +33,7 @@ export default function Footer() {
           </div>
           <hr className="w-full border-beige my-2" />
           <div className="w-full flex flex-col sm:flex-row items-start sm:items-center justify-between">
-          <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2">
               <h1 className="font-NeutraContent text-beige text-md sm:text-lg md:text-lg lg:text-xl xl:text-2xl tracking-tighter">
                 Jobs
               </h1>
@@ -49,7 +59,7 @@ export default function Footer() {
 
         {/* Right side - Contact Form */}
         <div className="w-full lg:w-1/2 flex items-center justify-center mt-8 lg:mt-0 px-0 sm:px-4">
-          <form className="bg-white/10 backdrop-blur-sm p-4 sm:p-6 rounded-lg w-full max-w-md border border-beige/30">
+          <form className="bg-white/10 backdrop-blur-sm p-4 sm:p-6 rounded-lg w-full h-full flex flex-col justify-center max-w-md border border-beige/30">
             <h2 className="font-neutra text-beige text-2xl sm:text-3xl lg:text-4xl mb-6 text-center">
               Talk to our Consultant
             </h2>
@@ -59,6 +69,8 @@ export default function Footer() {
                 type="text"
                 className="w-full px-3 py-2 bg-transparent border-b-2 border-beige/30 font-NeutraContent text-beige placeholder-beige/70 focus:outline-none focus:border-beige transition-colors"
                 placeholder="Name"
+                value={data.name}
+                onChange={(e) => setData({ ...data, name: e.target.value })}
               />
             </div>
             <div className="mb-6">
@@ -66,6 +78,10 @@ export default function Footer() {
                 type="tel"
                 className="w-full px-3 py-2 bg-transparent border-b-2 border-beige/30 font-NeutraContent text-beige placeholder-beige/70 focus:outline-none focus:border-beige transition-colors"
                 placeholder="Phone Number"
+                minLength={10}
+                maxLength={10}
+                value={data.phone}
+                onChange={(e) => setData({ ...data, phone: e.target.value })}
               />
             </div>
 
@@ -74,9 +90,10 @@ export default function Footer() {
                 type="email"
                 className="w-full px-3 py-2 bg-transparent border-b-2 border-beige/30 font-NeutraContent text-beige placeholder-beige/70 focus:outline-none focus:border-beige transition-colors"
                 placeholder="Email (Optional)"
+                value={data.email}
+                onChange={(e) => setData({ ...data, email: e.target.value })}
               />
             </div>
-
 
             <button className="w-full bg-transparent border border-beige text-beige font-neutra font-bold py-2 rounded-lg hover:bg-beige hover:text-[#737057] transition-all duration-300">
               Submit
@@ -88,8 +105,8 @@ export default function Footer() {
       {/* Bottom credits */}
       <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0 mt-8 px-4 sm:px-8 lg:px-12">
         <div className="flex items-center justify-center gap-5 text-2xl sm:text-3xl text-beige cursor-pointer lg:ml-14">
-          <FaInstagram className="hover:scale-110 transition-transform"/>
-          <BsWhatsapp className="hover:scale-110 transition-transform"/>
+          <FaInstagram className="hover:scale-110 transition-transform" />
+          <BsWhatsapp className="hover:scale-110 transition-transform" />
         </div>
         <h1
           className="font-NeutraContent text-beige text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl tracking-tighter cursor-pointer relative group lg:mr-24"
