@@ -97,13 +97,13 @@ function Portfolio() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
       >
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-neutra text-black">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-helvatica text-black">
           Interior
         </h1>
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-neutra text-black">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-helvatica text-black">
           &
         </h1>
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-neutra text-black">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-helvatica text-black">
           Architecture
         </h1>
       </motion.div>

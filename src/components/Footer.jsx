@@ -17,28 +17,28 @@ export default function Footer() {
       {/* Left side */}
       <div className="w-full flex flex-col lg:flex-row px-4 sm:px-8 lg:px-12">
         <div className="w-full lg:w-1/2 lg:ml-14">
-          <span className="font-marckScript text-beige text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl tracking-tighter break-words relative group cursor-pointer">
+          <span className="font-helvatica text-beige text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl tracking-tighter break-words relative group cursor-pointer">
             Contact Us
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-beige transition-all duration-300 group-hover:w-full"></span>
           </span>
           <div className="w-full flex flex-col sm:flex-row items-start sm:items-center justify-between mt-5">
             <div className="flex items-center gap-2">
-              <h1 className="font-NeutraContent text-beige text-md sm:text-lg md:text-lg lg:text-xl xl:text-2xl tracking-tighter">
+              <h1 className="font-helvatica text-beige text-sm sm:text-sm md:text-sm lg:text-md xl:text-lg tracking-tighter">
                 Support
               </h1>
             </div>
-            <h1 className="font-NeutraContent text-beige cursor-pointer text-md sm:text-lg md:text-lg lg:text-xl xl:text-2xl tracking-tighter mt-2 sm:mt-0">
+            <h1 className="font-helvatica text-beige cursor-pointer text-sm sm:text-sm md:text-md lg:text-lg xl:text-xl tracking-tighter mt-2 sm:mt-0">
               connect@squarefoot.studio
             </h1>
           </div>
           <hr className="w-full border-beige my-2" />
           <div className="w-full flex flex-col sm:flex-row items-start sm:items-center justify-between">
             <div className="flex items-center gap-2">
-              <h1 className="font-NeutraContent text-beige text-md sm:text-lg md:text-lg lg:text-xl xl:text-2xl tracking-tighter">
+              <h1 className="font-helvatica text-beige text-sm sm:text-sm md:text-sm lg:text-md xl:text-lg tracking-tighter">
                 Jobs
               </h1>
             </div>
-            <h1 className="font-NeutraContent text-beige cursor-pointer text-md sm:text-lg md:text-lg lg:text-xl xl:text-2xl tracking-tighter mt-2 sm:mt-0">
+            <h1 className="font-helvatica text-beige cursor-pointer text-sm sm:text-sm md:text-md lg:text-lg xl:text-xl tracking-tighter mt-2 sm:mt-0">
               career@squarefoot.studio
             </h1>
           </div>
@@ -60,14 +60,14 @@ export default function Footer() {
         {/* Right side - Contact Form */}
         <div className="w-full lg:w-1/2 flex items-center justify-center mt-8 lg:mt-0 px-0 sm:px-4">
           <form className="bg-white/10 backdrop-blur-sm p-4 sm:p-6 rounded-lg w-full h-full flex flex-col justify-center max-w-md border border-beige/30">
-            <h2 className="font-neutra text-beige text-2xl sm:text-3xl lg:text-4xl mb-6 text-center">
-              Talk to our Consultant
+            <h2 className="font-helvatica text-beige text-2xl sm:text-3xl lg:text-4xl mb-6 text-center">
+              Talk to our <span className="text-yellow-500">Consultant</span>
             </h2>
 
             <div className="mb-4">
               <input
                 type="text"
-                className="w-full px-3 py-2 bg-transparent border-b-2 border-beige/30 font-NeutraContent text-beige placeholder-beige/70 focus:outline-none focus:border-beige transition-colors"
+                className="w-full px-3 py-2 bg-transparent border-b-2 border-beige/30 font-helvatica text-beige placeholder-beige/70 focus:outline-none focus:border-beige transition-colors"
                 placeholder="Name"
                 value={data.name}
                 onChange={(e) => setData({ ...data, name: e.target.value })}
@@ -76,7 +76,7 @@ export default function Footer() {
             <div className="mb-6">
               <input
                 type="tel"
-                className="w-full px-3 py-2 bg-transparent border-b-2 border-beige/30 font-NeutraContent text-beige placeholder-beige/70 focus:outline-none focus:border-beige transition-colors"
+                className="w-full px-3 py-2 bg-transparent border-b-2 border-beige/30 font-helvatica text-beige placeholder-beige/70 focus:outline-none focus:border-beige transition-colors"
                 placeholder="Phone Number"
                 minLength={10}
                 maxLength={10}
@@ -88,14 +88,14 @@ export default function Footer() {
             <div className="mb-4">
               <input
                 type="email"
-                className="w-full px-3 py-2 bg-transparent border-b-2 border-beige/30 font-NeutraContent text-beige placeholder-beige/70 focus:outline-none focus:border-beige transition-colors"
+                className="w-full px-3 py-2 bg-transparent border-b-2 border-beige/30 font-helvatica text-beige placeholder-beige/70 focus:outline-none focus:border-beige transition-colors"
                 placeholder="Email (Optional)"
                 value={data.email}
                 onChange={(e) => setData({ ...data, email: e.target.value })}
               />
             </div>
 
-            <button className="w-full bg-transparent border border-beige text-beige font-neutra font-bold py-2 rounded-lg hover:bg-beige hover:text-[#737057] transition-all duration-300">
+            <button className="w-full bg-yellow-500  text-black font-helvatica font-bold py-2 rounded-lg transition-all duration-300">
               Submit
             </button>
           </form>
@@ -109,7 +109,7 @@ export default function Footer() {
           <BsWhatsapp className="hover:scale-110 transition-transform" />
         </div>
         <h1
-          className="font-NeutraContent text-beige text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl tracking-tighter cursor-pointer relative group lg:mr-24"
+          className="font-helvatica text-beige text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl tracking-tighter cursor-pointer relative group lg:mr-24"
           onClick={() => {
             const scrollToTop = () => {
               const currentPosition = window.scrollY;

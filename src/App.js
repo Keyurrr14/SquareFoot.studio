@@ -26,6 +26,9 @@ export default function App() {
         <Routes>
           <Route element={<RootLayout />}>
             <Route path="/" element={<Home />} />
+            <Route path="/about" element={<Home />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/services" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
           </Route>
         </Routes>
@@ -33,3 +36,5 @@ export default function App() {
     </Router>
   );
 }
+
+// https://drive.google.com/drive/folders/1YsXe-1YCyTzP4KbF99dh1j9k_LZtQeTU?usp=share_link

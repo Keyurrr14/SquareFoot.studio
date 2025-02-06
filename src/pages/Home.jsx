@@ -80,11 +80,11 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="font-marckScript text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-10"
+                className="font-helvatica text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-10"
               >
                 Crafting spaces that define your Legacy
               </motion.h1>
-              <motion.ul className="list-disc list-inside sm:list-outside font-neutra text-white text-lg sm:text-xl md:text-2xl lg:text-3xl mt-6 sm:mt-10 space-y-2">
+              <motion.ul className="list-disc list-inside sm:list-outside font-helvatica text-white text-md sm:text-lg md:text-xl lg:text-2xl mt-6 sm:mt-10 space-y-2">
                 {[
                   "Architecture and Design Consultancy.",
                   "Interior Design and Build.",
@@ -109,23 +109,23 @@ export default function Home() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
-                className="bg-white/10 backdrop-blur-sm p-6 sm:p-8 rounded-lg w-full max-w-md border border-light-black/30"
+                className="bg-white backdrop-blur-sm p-6 sm:p-8 rounded-lg w-full max-w-md border border-light-black/30"
               >
-                <h2 className="font-neutra text-white text-3xl sm:text-4xl lg:text-5xl mb-6 sm:mb-8 text-center">
-                  Talk to our Consultant
+                <h2 className="font-helvatica text-black text-3xl sm:text-4xl lg:text-4xl mb-6 sm:mb-8 text-center">
+                  Talk to our <span className="text-yellow-500">Consultant</span>
                 </h2>
 
                 <div className="mb-4 sm:mb-6">
                   <input
                     type="text"
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border-b-2 border-light-black/30 font-NeutraContent text-light-black placeholder-light-black/70 focus:outline-none focus:border-light-black transition-colors"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border-b-2 border-light-black/30 font-helvatica text-light-black placeholder-black focus:outline-none focus:border-light-black transition-colors"
                     placeholder="Name"
                   />
                 </div>
                 <div className="mb-6 sm:mb-8">
                   <input
                     type="tel"
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border-b-2 border-light-black/30 font-NeutraContent text-light-black placeholder-light-black/70 focus:outline-none focus:border-light-black transition-colors"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border-b-2 border-light-black/30 font-helvatica text-light-black placeholder-black focus:outline-none focus:border-light-black transition-colors"
                     placeholder="Phone Number"
                   />
                 </div>
@@ -133,12 +133,12 @@ export default function Home() {
                 <div className="mb-4 sm:mb-6">
                   <input
                     type="email"
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border-b-2 border-light-black/30 font-NeutraContent text-light-black placeholder-light-black/70 focus:outline-none focus:border-light-black transition-colors"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border-b-2 border-light-black/30 font-helvatica text-light-black placeholder-black focus:outline-none focus:border-light-black transition-colors"
                     placeholder="Email (Optional)"
                   />
                 </div>
 
-                <button className="w-full bg-transparent text-xl border border-white text-white font-neutra font-bold py-2 sm:py-3 rounded-lg hover:bg-white hover:text-black transition-all duration-300">
+                <button className="w-full bg-yellow-500 text-xltext-black font-helvatica font-bold py-2 sm:py-3 rounded-lg transition-all duration-300">
                   Submit
                 </button>
               </motion.form>
@@ -147,7 +147,7 @@ export default function Home() {
         </motion.div>
 
         <div className="my-20" ref={numbersRef}>
-          <h1 className="font-marckScript text-black relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter text-center mt-8 sm:mt-12 md:mt-16">
+          <h1 className="font-helvatica text-black relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter text-center mt-8 sm:mt-12 md:mt-16">
             Let our numbers do the talking!
           </h1>
           <div className="flex flex-row justify-center items-center gap-8 md:gap-16 mt-14 mx-auto max-w-5xl px-4">
@@ -163,11 +163,11 @@ export default function Home() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="font-neutraContent text-black text-3xl sm:text-4xl md:text-5xl"
+                className="font-helvatica text-black text-3xl sm:text-4xl md:text-5xl"
               >
                 <CountUp end={100} duration={4} suffix="+" />
               </motion.p>
-              <p className="font-neutraContent text-black mt-2">Expert Team</p>
+              <p className="font-helvatica text-black mt-2">Expert Team</p>
             </motion.div>
 
             <motion.div
@@ -182,11 +182,11 @@ export default function Home() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="font-neutraContent text-black text-3xl sm:text-4xl md:text-5xl"
+                className="font-helvatica text-black text-3xl sm:text-4xl md:text-5xl"
               >
                 <CountUp end={100000} duration={3} suffix="+" />
               </motion.p>
-              <p className="font-neutraContent text-black mt-2">
+              <p className="font-helvatica text-black mt-2">
                 Residential Projects Delivered (sq.ft)
               </p>
             </motion.div>
@@ -203,11 +203,11 @@ export default function Home() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="font-neutraContent text-black text-3xl sm:text-4xl md:text-5xl"
+                className="font-helvatica text-black text-3xl sm:text-4xl md:text-5xl"
               >
                 <CountUp end={1500000} duration={3} suffix="+" />
               </motion.p>
-              <p className="font-neutraContent text-black mt-2">
+              <p className="font-helvatica text-black mt-2">
                 Commercial Projects Delivered (sq.ft)
               </p>
             </motion.div>
@@ -221,7 +221,7 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="font-marckScript text-black text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl my-6"
+          className="font-helvatica text-black text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl my-6"
         >
           Noted Clients
         </motion.h1>
@@ -231,7 +231,7 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="font-marckScript text-black text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-14"
+          className="font-helvatica text-black text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-14"
         >
           Awards & Features
         </motion.h1>
