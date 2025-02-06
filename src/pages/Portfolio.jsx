@@ -1,54 +1,86 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
-import Architechture from "../assets/images/Architechture.webp";
-import Architechture2 from "../assets/images/Architechture2.webp";
-import Commercial from "../assets/images/Commercial.webp";
-import Commercial2 from "../assets/images/Commercial2.webp";
-import Industrial from "../assets/images/Industrial.webp";
-import Industrial2 from "../assets/images/Industrial2.webp";
+import CaraCaraHyderabad from "../assets/images/projects/CaraCaraHydrebad.webp";
+import CecconisSoho from "../assets/images/projects/CecconisSoho.webp";
+import ChhatrasagarHotel from "../assets/images/projects/ChhatrasagarHotel.webp";
+import HyattAhemdabad from "../assets/images/projects/HyattAhemdabad.webp";
+import ITCMaratha from "../assets/images/projects/ITCMaratha.webp";
+import LalitDelhi from "../assets/images/projects/LalitDelhi.webp";
+import LeelaMumbai from "../assets/images/projects/LeelaMumbai.webp";
+import LeelaPalaceDelhi from "../assets/images/projects/LeelaPalaceDelhi.webp";
+import OberoiNewDelhi from "../assets/images/projects/OberoiNewDelhi.webp";
+import RadissonHotel from "../assets/images/projects/RadissonHotel.webp";
+import TajKatraJammu from "../assets/images/projects/TajKatraJammu.webp";
+import TajBanglore from "../assets/images/projects/TajMGRoadBanglore.webp";
 import PortfolioItem from "../components/PortfolioItem";
 
-function Portfolio() {
+export default function Portfolio() {
   const imageClass = "snap-center w-full sm:w-1/3 flex-shrink-0";
   const [activeIndex, setActiveIndex] = useState(1);
   const carouselRef = useRef(null);
 
   const content = [
     {
-      image: Architechture,
-      alt: "Architecture",
-      title: "Architecture",
-      subtitle: "Oberoi Sky City",
+      image: CaraCaraHyderabad,
+      alt: "CaraCaraHyderabad",
+      subtitle: "CaraCara Hyderabad",
+    },
+
+    {
+      image: CecconisSoho,
+      alt: "CecconisSoho",
+      subtitle: "Cecconis Soho",
+    },
+
+    {
+      image: ChhatrasagarHotel,
+      alt: "ChhatrasagarHotel",
+      subtitle: "Chhatrasagar Hotel",
     },
     {
-      image: Architechture2,
-      alt: "Architecture",
-      title: "Architecture",
-      subtitle: "Oberoi Sky City",
+      image: HyattAhemdabad,
+      alt: "HyattAhemdabad",
+      subtitle: "Hyatt Ahemdabad",
     },
     {
-      image: Commercial,
-      alt: "Commercial",
-      title: "Commercial",
-      subtitle: "Oberoi Sky City",
+      image: ITCMaratha,
+      alt: "ITCMaratha",
+      subtitle: "ITC Maratha",
     },
     {
-      image: Commercial2,
-      alt: "Commercial",
-      title: "Commercial",
-      subtitle: "Oberoi Sky City",
+      image: LalitDelhi,
+      alt: "LalitDelhi",
+      subtitle: "Lalit Delhi",
     },
     {
-      image: Industrial,
-      alt: "Industrial",
-      title: "Industrial",
-      subtitle: "Oberoi Sky City",
+      image: LeelaMumbai,
+      alt: "LeelaMumbai",
+      subtitle: "Leela Mumbai",
     },
     {
-      image: Industrial2,
-      alt: "Industrial",
-      title: "Industrial",
-      subtitle: "Oberoi Sky City",
+      image: LeelaPalaceDelhi,
+      alt: "LeelaPalaceDelhi",
+      subtitle: "Leela Palace Delhi",
+    },
+    {
+      image: OberoiNewDelhi,
+      alt: "OberoiNewDelhi",
+      subtitle: "Oberoi New Delhi",
+    },
+    {
+      image: RadissonHotel,
+      alt: "RadissonHotel",
+      subtitle: "Radisson Hotel",
+    },
+    {
+      image: TajKatraJammu,
+      alt: "TajKatraJammu",
+      subtitle: "Taj Katra Jammu",
+    },
+    {
+      image: TajBanglore,
+      alt: "TajBanglore",
+      subtitle: "Taj Banglore",
     },
   ];
 
@@ -92,21 +124,17 @@ function Portfolio() {
   return (
     <>
       <motion.div
-        className="flex justify-center items-center gap-4 sm:gap-8 md:gap-12 lg:gap-16 mt-6 sm:mt-8 md:mt-10"
+        // className="flex justify-start items-center gap-4 sm:gap-8 md:gap-12 lg:gap-16 mt-6 sm:mt-8 md:mt-10"
+        className="ml-8 mt-10"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
       >
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-helvatica text-black">
-          Interior
-        </h1>
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-helvatica text-black">
-          &
-        </h1>
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-helvatica text-black">
-          Architecture
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-helvatica text-black">
+          Our Projects
         </h1>
       </motion.div>
+
       <div className="container mx-auto px-4 py-8">
         <div
           ref={carouselRef}
@@ -132,5 +160,3 @@ function Portfolio() {
     </>
   );
 }
-
-export default Portfolio;

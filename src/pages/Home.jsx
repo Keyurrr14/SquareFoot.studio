@@ -56,7 +56,7 @@ export default function Home() {
     <>
       <div className="min-h-screen w-full bg-white overflow-x-hidden">
         <motion.div
-          className="w-[98%] h-screen mx-auto relative overflow-hidden flex flex-col items-center justify-center"
+          className="w-full h-screen mx-auto relative overflow-hidden flex flex-col items-center justify-center"
           style={{ opacity }}
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -72,7 +72,7 @@ export default function Home() {
             }}
             {...fadeIn}
           />
-          <div className="absolute inset-0 bg-black opacity-70" />
+          <div className="absolute inset-0 bg-black opacity-80" />
 
           <div className="relative z-10 flex flex-col lg:flex-row w-full h-full p-4">
             <div className="w-full lg:w-1/2 flex flex-col justify-center px-4 sm:px-6 lg:px-8 mb-8 lg:mb-0 lg:ml-14">
@@ -82,14 +82,15 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="font-helvatica text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-10"
               >
-                Crafting spaces that define your Legacy
+                Crafting spaces that Define your Legacy
               </motion.h1>
-              <motion.ul className="list-disc list-inside sm:list-outside font-helvatica text-white text-md sm:text-lg md:text-xl lg:text-2xl mt-6 sm:mt-10 space-y-2">
+              <motion.ul className="list-disc list-inside sm:list-outside font-helvatica text-white text-md sm:text-lg md:text-xl lg:text-2xl mt-6 ml-5 sm:mt-10 space-y-2">
                 {[
                   "Architecture and Design Consultancy.",
                   "Interior Design and Build.",
                   "3D Visualization and Walkthrough Animation.",
                   "Project Feasibility Studies.",
+
                   "Vastu Consultancy.",
                 ].map((item, index) => (
                   <motion.li
@@ -111,8 +112,9 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.8 }}
                 className="bg-white backdrop-blur-sm p-6 sm:p-8 rounded-lg w-full max-w-md border border-light-black/30"
               >
-                <h2 className="font-helvatica text-black text-3xl sm:text-4xl lg:text-4xl mb-6 sm:mb-8 text-center">
-                  Talk to our <span className="text-yellow-500">Consultant</span>
+                <h2 className="font-helvatica font-bold text-black text-3xl sm:text-4xl lg:text-4xl mb-6 sm:mb-8 text-center">
+                  Talk to our{" "}
+                  <span className="text-yellow-500">Consultant</span>
                 </h2>
 
                 <div className="mb-4 sm:mb-6">
@@ -146,11 +148,15 @@ export default function Home() {
           </div>
         </motion.div>
 
-        <div className="my-20" ref={numbersRef}>
-          <h1 className="font-helvatica text-black relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter text-center mt-8 sm:mt-12 md:mt-16">
+        <div
+          className="h-80 bg-beige flex flex-col items-center justify-center"
+          ref={numbersRef}
+        >
+          <h1 className="font-helvatica text-black relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter text-center">
             Let our numbers do the talking!
           </h1>
-          <div className="flex flex-row justify-center items-center gap-8 md:gap-16 mt-14 mx-auto max-w-5xl px-4">
+
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-8 md:gap-16 mt-14 mx-auto max-w-5xl px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -165,7 +171,13 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="font-helvatica text-black text-3xl sm:text-4xl md:text-5xl"
               >
-                <CountUp end={100} duration={4} suffix="+" />
+                <CountUp
+                  end={100}
+                  duration={4}
+                  suffix="+"
+                  enableScrollSpy
+                  scrollSpyOnce
+                />
               </motion.p>
               <p className="font-helvatica text-black mt-2">Expert Team</p>
             </motion.div>
@@ -184,7 +196,13 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="font-helvatica text-black text-3xl sm:text-4xl md:text-5xl"
               >
-                <CountUp end={100000} duration={3} suffix="+" />
+                <CountUp
+                  end={100000}
+                  duration={3}
+                  suffix="+"
+                  enableScrollSpy
+                  scrollSpyOnce
+                />
               </motion.p>
               <p className="font-helvatica text-black mt-2">
                 Residential Projects Delivered (sq.ft)
@@ -205,7 +223,13 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="font-helvatica text-black text-3xl sm:text-4xl md:text-5xl"
               >
-                <CountUp end={1500000} duration={3} suffix="+" />
+                <CountUp
+                  end={1500000}
+                  duration={3}
+                  suffix="+"
+                  enableScrollSpy
+                  scrollSpyOnce
+                />
               </motion.p>
               <p className="font-helvatica text-black mt-2">
                 Commercial Projects Delivered (sq.ft)
@@ -214,7 +238,7 @@ export default function Home() {
           </div>
         </div>
 
-        <Portfolio/>
+        <Portfolio />
 
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -226,32 +250,32 @@ export default function Home() {
           Noted Clients
         </motion.h1>
         <LogoMarquee />
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="font-helvatica text-black text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-14"
-        >
-          Awards & Features
-        </motion.h1>
-        <div className="w-full flex flex-wrap items-center justify-center gap-8 sm:gap-12 md:gap-16 mt-0 px-4">
-          <img src={AD} alt="" className="h-32 sm:h-32 md:h-40 lg:h-48" />
-          <img src={FOAID} alt="" className="h-32 sm:h-32 md:h-40 lg:h-48" />
-          <img src={IIID} alt="" className="h-32 sm:h-32 md:h-40 lg:h-48" />
-          <img src={NDTV} alt="" className="h-32 sm:h-32 md:h-40 lg:h-48" />
-          <img
-            src={Sustainable}
-            alt=""
-            className="h-32 sm:h-32 md:h-40 lg:h-48"
-          />
-          <img src={TOI} alt="" className="h-32 sm:h-32 md:h-40 lg:h-48" />
+        <div className="bg-beige flex flex-col items-center justify-center mt-10">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="font-helvatica text-black text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-10"
+          >
+            Awards & Features
+          </motion.h1>
+          <div className="w-full flex flex-wrap items-center justify-center gap-8  mt-0 px-4">
+            <img src={AD} alt="" className="h-32 sm:h-32 md:h-40 lg:h-52" />
+            <img src={FOAID} alt="" className="h-32 sm:h-32 md:h-40 lg:h-52" />
+            <img src={IIID} alt="" className="h-32 sm:h-32 md:h-40 lg:h-52" />
+            <img src={NDTV} alt="" className="h-32 sm:h-32 md:h-40 lg:h-52" />
+            <img
+              src={Sustainable}
+              alt=""
+              className="h-32 sm:h-32 md:h-40 lg:h-52"
+            />
+            <img src={TOI} alt="" className="h-32 sm:h-32 md:h-40 lg:h-52" />
+          </div>
+
         </div>
-
-        <div className="mt-10"></div>
-
-        <div></div>
       </div>
+
     </>
   );
 }

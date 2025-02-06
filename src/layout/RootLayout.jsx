@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import { useSmoothScroll } from "../context/SmoothScrollContext";
 import Footer from "../components/Footer";
 
-function RootLayout() {
+export default function RootLayout() {
   const location = useLocation();
   const { lenis } = useSmoothScroll();
 
@@ -25,4 +25,3 @@ function RootLayout() {
   );
 }
 
-export default RootLayout;

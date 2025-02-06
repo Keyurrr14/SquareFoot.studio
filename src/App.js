@@ -2,12 +2,14 @@ import AnimatedCursor from "react-animated-cursor";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { SmoothScrollProvider } from "./context/SmoothScrollContext";
 import RootLayout from "./layout/RootLayout";
-import Contact from "./pages/Contact";
 import Home from "./pages/Home";
+import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
+import Services from "./pages/Services";
 export default function App() {
   return (
     <Router>
+
       {/* <AnimatedCursor
         innerSize={8}
         outerSize={35}
@@ -26,10 +28,10 @@ export default function App() {
         <Routes>
           <Route element={<RootLayout />}>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<Home />} />
+            <Route path="/about" element={<About />} />
             <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/services" element={<Home />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/contact" element={<Home />} />
           </Route>
         </Routes>
       </SmoothScrollProvider>

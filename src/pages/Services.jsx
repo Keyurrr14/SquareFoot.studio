@@ -2,23 +2,23 @@ import ServiceSection from "../components/ServiceSection";
 import { motion } from "framer-motion";
 
 export default function Services() {
-  const fadeInUp = {
-    initial: { opacity: 0, y: 50 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true },
-    transition: { duration: 0.8, ease: "easeOut" }
-  };
+  // const fadeInUp = {
+  //   initial: { opacity: 0, y: 50 },
+  //   whileInView: { opacity: 1, y: 0 },
+  //   viewport: { once: true },
+  //   transition: { duration: 0.8, ease: "easeOut" }
+  // };
 
   return (
-    <div className="min-h-screen bg-beige">
+    <div className="min-h-screen bg-white">
       <motion.div 
-        {...fadeInUp}
+        // {...fadeInUp}
         className="flex flex-col items-center justify-center mt-4 sm:mt-6 md:mt-8 lg:mt-10 px-4"
       >
-        <h1 className="font-marbley text-center text-brown text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl max-w-3xl">
+        <h1 className="font-helvatica text-center text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl max-w-3xl">
           Comprehensive Architecture and Interior Design Services in Mumbai
         </h1>
-        <p className="w-full sm:w-[28rem] font-manrope text-center text-brown text-xs sm:text-base md:text-lg mt-2 sm:mt-4">
+        <p className="w-full sm:w-[28rem] font-helvatica text-center text-black text-xs sm:text-base md:text-lg mt-2 sm:mt-4">
           Explore our range of professional services designed to cater to all
           your architectural and interior design needs.
         </p>
