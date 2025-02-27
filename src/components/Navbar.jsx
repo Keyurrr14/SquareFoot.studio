@@ -44,7 +44,7 @@ function Navbar() {
               <img className="w-8" src={logo} alt="" />
             <NavLink
               to="/"
-              className="text-2xl font-helvatica font-bold text-black"
+              className="text-3xl font-helvatica font-bold text-black"
             >
               squarefoot.studio
             </NavLink>
@@ -129,7 +129,7 @@ function Navbar() {
           <div className="flex items-center h-16 px-4">
             <NavLink
               to="/"
-              className="text-2xl font-helvatica font-bold text-black flex-shrink-0"
+              className="text-3xl font-helvatica font-bold text-black flex-shrink-0"
               onClick={() => setIsOpen(false)}
             >
               squarefoot.studio

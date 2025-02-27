@@ -105,8 +105,20 @@ export default function Footer() {
       {/* Bottom credits */}
       <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0 mt-8 px-4 sm:px-8 lg:px-12">
         <div className="flex items-center justify-center gap-5 text-2xl sm:text-3xl text-beige cursor-pointer lg:ml-14">
-          <FaInstagram className="hover:scale-110 transition-transform" />
-          <BsWhatsapp className="hover:scale-110 transition-transform" />
+          <a
+            href="https://www.instagram.com/squarefoot.studio_/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaInstagram className="hover:scale-110 transition-transform text-4xl" />
+          </a>
+          <a
+            href="https://wa.me/+917862099999" // Replace with your WhatsApp number
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <BsWhatsapp className="hover:scale-110 transition-transform text-4xl" />
+          </a>
         </div>
         <h1
           className="font-helvatica text-beige text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl tracking-tighter cursor-pointer relative group lg:mr-24"

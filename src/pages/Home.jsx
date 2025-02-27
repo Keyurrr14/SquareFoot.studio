@@ -17,6 +17,48 @@ export default function Home() {
 
   const numbersRef = useRef(null);
 
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+  });
+  const [isLoading, setIsLoading] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    try {
+      // Send to Google Sheets
+      const sheetsResponse = await fetch(
+        "https://script.google.com/macros/s/AKfycby1ewYidn5TsTyS8KDATmGIluCIZPG0cWt5GeiQYRswx3GTzQjAaLrsVxmhKe2kExSGNg/exec",
+        {
+          method: "POST",
+          body: JSON.stringify(formData),
+        }
+      );
+      const sheetsData = await sheetsResponse.json();
+
+      if (sheetsData.success) {
+        setShowAlert(true);
+        setFormData({ name: "", phone: "", email: "" });
+        setTimeout(() => setShowAlert(false), 3000);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Error submitting form. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.scrollY;
@@ -56,7 +98,7 @@ export default function Home() {
     <>
       <div className="min-h-screen w-full bg-white overflow-x-hidden">
         <motion.div
-          className="w-full h-screen mx-auto relative overflow-hidden flex flex-col items-center justify-center"
+          className="w-full min-h-screen mx-auto relative overflow-hidden flex flex-col items-center justify-center"
           style={{ opacity }}
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -107,6 +149,7 @@ export default function Home() {
 
             <div className="w-full lg:w-1/2 flex items-center justify-center px-4">
               <motion.form
+                onSubmit={handleSubmit}
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
@@ -122,6 +165,9 @@ export default function Home() {
                     type="text"
                     className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border-b-2 border-light-black/30 font-helvatica text-light-black placeholder-black focus:outline-none focus:border-light-black transition-colors"
                     placeholder="Name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="mb-6 sm:mb-8">
@@ -129,6 +175,9 @@ export default function Home() {
                     type="tel"
                     className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border-b-2 border-light-black/30 font-helvatica text-light-black placeholder-black focus:outline-none focus:border-light-black transition-colors"
                     placeholder="Phone Number"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
                   />
                 </div>
 
@@ -137,11 +186,25 @@ export default function Home() {
                     type="email"
                     className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border-b-2 border-light-black/30 font-helvatica text-light-black placeholder-black focus:outline-none focus:border-light-black transition-colors"
                     placeholder="Email (Optional)"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                   />
                 </div>
 
-                <button className="w-full bg-yellow-500 text-xltext-black font-helvatica font-bold py-2 sm:py-3 rounded-lg transition-all duration-300">
-                  Submit
+                <button
+                  type="submit"
+                  className="w-full bg-yellow-500 text-xltext-black font-helvatica font-bold py-2 sm:py-3 rounded-lg transition-all duration-300 relative"
+                  disabled={isLoading}
+                >
+                  {isLoading ? (
+                    <div className="flex items-center justify-center">
+                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-black mr-2"></div>
+                      Submitting...
+                    </div>
+                  ) : (
+                    "Submit"
+                  )}
                 </button>
               </motion.form>
             </div>
@@ -149,27 +212,27 @@ export default function Home() {
         </motion.div>
 
         <div
-          className="h-80 bg-beige flex flex-col items-center justify-center"
+          className="h-auto min-h-[20rem] bg-beige flex flex-col items-center justify-center py-8 px-4"
           ref={numbersRef}
         >
-          <h1 className="font-helvatica text-black relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter text-center">
+          <h1 className="font-helvatica text-black relative z-10 text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter text-center px-4">
             Let our numbers do the talking!
           </h1>
 
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-8 md:gap-16 mt-14 mx-auto max-w-5xl px-4">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-8 md:gap-16 mt-8 sm:mt-14 mx-auto max-w-5xl px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-center flex-1"
+              className="text-center flex-1 mb-6 sm:mb-0"
             >
               <motion.p
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="font-helvatica text-black text-3xl sm:text-4xl md:text-5xl"
+                className="font-helvatica text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
               >
                 <CountUp
                   end={100}
@@ -179,7 +242,9 @@ export default function Home() {
                   scrollSpyOnce
                 />
               </motion.p>
-              <p className="font-helvatica text-black mt-2">Expert Team</p>
+              <p className="font-helvatica text-black mt-2 text-sm sm:text-base">
+                Expert Team
+              </p>
             </motion.div>
 
             <motion.div
@@ -187,14 +252,14 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-center flex-1"
+              className="text-center flex-1 mb-6 sm:mb-0"
             >
               <motion.p
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="font-helvatica text-black text-3xl sm:text-4xl md:text-5xl"
+                className="font-helvatica text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
               >
                 <CountUp
                   end={100000}
@@ -204,7 +269,7 @@ export default function Home() {
                   scrollSpyOnce
                 />
               </motion.p>
-              <p className="font-helvatica text-black mt-2">
+              <p className="font-helvatica text-black mt-2 text-sm sm:text-base">
                 Residential Projects Delivered (sq.ft)
               </p>
             </motion.div>
@@ -214,14 +279,14 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-center flex-1"
+              className="text-center flex-1 mb-6 sm:mb-0"
             >
               <motion.p
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="font-helvatica text-black text-3xl sm:text-4xl md:text-5xl"
+                className="font-helvatica text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
               >
                 <CountUp
                   end={1500000}
@@ -231,7 +296,7 @@ export default function Home() {
                   scrollSpyOnce
                 />
               </motion.p>
-              <p className="font-helvatica text-black mt-2">
+              <p className="font-helvatica text-black mt-2 text-sm sm:text-base">
                 Commercial Projects Delivered (sq.ft)
               </p>
             </motion.div>
@@ -272,10 +337,8 @@ export default function Home() {
             />
             <img src={TOI} alt="" className="h-32 sm:h-32 md:h-40 lg:h-52" />
           </div>
-
         </div>
       </div>
-
     </>
   );
 }

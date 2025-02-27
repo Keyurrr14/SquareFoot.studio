@@ -124,11 +124,10 @@ export default function Portfolio() {
   return (
     <>
       <motion.div
-        // className="flex justify-start items-center gap-4 sm:gap-8 md:gap-12 lg:gap-16 mt-6 sm:mt-8 md:mt-10"
         className="ml-8 mt-10"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
+        // initial={{ opacity: 0, y: 20 }}
+        // animate={{ opacity: 1, y: 0 }}
+        // transition={{ duration: 0.5, ease: "easeInOut" }}
       >
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-helvatica text-black">
           Our Projects
@@ -142,9 +141,7 @@ export default function Portfolio() {
         >
           {seamlessContent.map((data, index) => (
             <div
-              className={`
-              ${index === activeIndex ? "opacity-100" : "opacity-20"}
-              transition-all duration-400 ease-linear ${imageClass}`}
+              className={`${imageClass}`}
               key={index}
             >
               <PortfolioItem
